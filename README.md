@@ -70,3 +70,9 @@ Wer was von wem sieht, steht in `kern/sichtbarkeit.py`; Zustandswechsel
 
 Im Betrieb kommen `RIDEBUDDIES_SECRET_KEY`, `RIDEBUDDIES_ALLOWED_HOSTS` und
 `RIDEBUDDIES_DATA_DIR` (optional `RIDEBUDDIES_STATIC_ROOT`) aus der Umgebung, nie aus dem Repo.
+
+gunicorn lauscht auf einem Unix-Socket, dort ist `REMOTE_ADDR` leer. Die
+Client-IP (für allauths Ratenbegrenzung) kommt deshalb aus `X-Forwarded-For`,
+das nginx mit `$proxy_add_x_forwarded_for` setzen **muss**
+(`ALLAUTH_TRUSTED_PROXY_COUNT = 1` in `settings.py`); fehlt der Header, endet
+jede Anmeldung mit 403.

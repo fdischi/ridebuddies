@@ -138,6 +138,23 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_ADAPTER = 'kern.adapter.KontoAdapter'
 
+# Client-IP hinter nginx (Hotfix 23.09.2026). Auf enduro-web scheiterte JEDE
+# Anmeldung ueber /konto/login/ mit einem nackten 403, auch mit unbekanntem
+# Nutzernamen: gunicorn lauscht auf einem Unix-Socket
+# (unix:/run/ridebuddies/gunicorn.sock), REMOTE_ADDR ist dort leer. allauth
+# braucht die Client-IP fuer seine Ratenbegrenzung
+# (allauth/core/internal/httpkit.py get_client_ip) und wirft PermissionDenied,
+# wenn es keine findet. Der Django-Testclient setzt REMOTE_ADDR=127.0.0.1 und
+# hat den Fehler deshalb nie gesehen.
+#
+# nginx setzt X-Forwarded-For mit $proxy_add_x_forwarded_for, haengt die echte
+# Gegenstelle also RECHTS an. Genau ein vertrauenswuerdiger Proxy -> allauth
+# nimmt ips[-1]. Was der Client links voranstellt, wird ignoriert; ein
+# groesserer Wert waere ein Loch, weil dann ein vorgetaeuschter Eintrag zaehlt.
+# Ohne X-Forwarded-For (runserver, Tests) faellt allauth auf REMOTE_ADDR
+# zurueck; ohne beides bleibt das 403 (kern/tests/test_anmeldung.py).
+ALLAUTH_TRUSTED_PROXY_COUNT = 1
+
 # Registrierung zu, solange nur Dummies laufen und keine Mail rausgeht
 # (Festlegung der Hauptsitzung, siehe kern/adapter.py). Auf mit =1.
 RIDEBUDDIES_REGISTRIERUNG_OFFEN = os.environ.get('RIDEBUDDIES_REGISTRIERUNG_OFFEN') == '1'

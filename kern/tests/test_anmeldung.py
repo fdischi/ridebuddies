@@ -242,3 +242,49 @@ class EmailBestaetigenTest(TestCase):
         self.assertFalse(EmailAddress.objects.filter(user=self.admin).exists())
         self.admin.refresh_from_db()
         self.assertEqual(self.admin.email, vorher)
+
+
+@SCHNELL
+class ClientIpHinterProxyTest(TestCase):
+    """
+    Hotfix 23.09.2026: Hinter nginx ueber den Unix-Socket ist REMOTE_ADDR leer,
+    allauth wirft dann PermissionDenied (403) schon vor der Kennwortpruefung.
+    ALLAUTH_TRUSTED_PROXY_COUNT = 1 (settings.py) nimmt die Adresse, die nginx
+    rechts an X-Forwarded-For haengt. Der Testclient setzt sonst
+    REMOTE_ADDR=127.0.0.1 und verdeckt den Fehler -- deshalb hier leer.
+    """
+    @classmethod
+    def setUpTestData(cls):
+        cls.nutzer = _anlegen('mitfahrer')
+        EmailAddress.objects.create(user=cls.nutzer, email=cls.nutzer.email,
+                                    verified=True, primary=True)
+
+    def test_anmeldung_ueber_socket_mit_xff(self):
+        # Links ein vom Client vorgetaeuschter Wert, rechts der von nginx.
+        antwort = self.client.post(LOGIN, {'login': 'mitfahrer', 'password': KENNWORT},
+                                   REMOTE_ADDR='', HTTP_X_FORWARDED_FOR='1.2.3.4, 5.6.7.8')
+        self.assertNotEqual(antwort.status_code, 403)
+        self.assertEqual(antwort.status_code, 302)
+        self.assertEqual(int(self.client.session['_auth_user_id']), self.nutzer.pk)
+
+    def test_unbekannter_nutzer_ueber_socket_kein_403(self):
+        # So wurde es auf dem Server reproduziert: 403 schon ohne Ratenbegrenzung.
+        antwort = self.client.post(LOGIN, {'login': 'niemand', 'password': 'falsch'},
+                                   REMOTE_ADDR='', HTTP_X_FORWARDED_FOR='5.6.7.8')
+        self.assertEqual(antwort.status_code, 200)
+        self.assertNotIn('_auth_user_id', self.client.session)
+
+    def test_ohne_remote_addr_und_ohne_xff_bleibt_403(self):
+        # Absicht: Ohne jede Client-IP kann allauth nicht begrenzen und verweigert.
+        # Hinter nginx kommt XFF immer an; wer das hier aendert, oeffnet die
+        # Ratenbegrenzung.
+        antwort = self.client.post(LOGIN, {'login': 'mitfahrer', 'password': KENNWORT},
+                                   REMOTE_ADDR='')
+        self.assertEqual(antwort.status_code, 403)
+        self.assertNotIn('_auth_user_id', self.client.session)
+
+    def test_ohne_xff_weiter_ueber_remote_addr(self):
+        # runserver und die uebrigen Tests: kein Proxy, REMOTE_ADDR genuegt.
+        antwort = self.client.post(LOGIN, {'login': 'mitfahrer', 'password': KENNWORT})
+        self.assertEqual(antwort.status_code, 302)
+        self.assertEqual(int(self.client.session['_auth_user_id']), self.nutzer.pk)
