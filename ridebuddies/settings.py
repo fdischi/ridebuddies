@@ -58,6 +58,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'kern',
 ]
 
 MIDDLEWARE = [
@@ -66,8 +69,16 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # Anmeldepflicht global (Fabian, 23.09.2026): ohne Anmeldung leitet jede
+    # Seite auf LOGIN_URL um. Ausgenommen ist nur, was mit login_not_required
+    # markiert ist - die allauth-Konto-Views (Login, Registrierung,
+    # Passwort vergessen, Bestaetigungslink) tun das selbst, ebenso Djangos
+    # Admin-Login. Unbekannte Pfade loesen nicht auf und enden als 404, ohne
+    # etwas zu zeigen. Belegt in ridebuddies/tests.py.
+    'django.contrib.auth.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'ridebuddies.urls'
@@ -99,6 +110,35 @@ DATABASES = {
         'NAME': DATA_DIR / 'db.sqlite3',
     }
 }
+
+
+# Nutzer und Anmeldung
+# Eigenes Nutzermodell von Anfang an (Fabian, 23.09.2026). Deshalb beginnen die
+# Migrationen mit TASK-120.04 neu; eine Datenbank aus Schritt 3b (mit Djangos
+# auth_user) passt nicht mehr und wird neu angelegt.
+
+AUTH_USER_MODEL = 'kern.Nutzer'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'startseite'
+
+# django-allauth: Anmelden mit Nutzername oder E-Mail, E-Mail-Bestaetigung
+# Pflicht. Oberflaeche und Onboarding kommen erst in Schritt 11; bis dahin
+# genuegen die allauth-Standardvorlagen.
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_ADAPTER = 'kern.adapter.KontoAdapter'
+
+# Registrierung zu, solange nur Dummies laufen und keine Mail rausgeht
+# (Festlegung der Hauptsitzung, siehe kern/adapter.py). Auf mit =1.
+RIDEBUDDIES_REGISTRIERUNG_OFFEN = os.environ.get('RIDEBUDDIES_REGISTRIERUNG_OFFEN') == '1'
 
 
 # Password validation
@@ -141,6 +181,10 @@ STATIC_ROOT = Path(os.environ.get('RIDEBUDDIES_STATIC_ROOT', DATA_DIR / 'static'
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
+
+# Bleibt Konsole, bis der E-Mail-Versand entschieden ist (offener Punkt in der
+# Plan-Notiz). allauth schickt Bestaetigungsmails also nur ins Log.
+DEFAULT_FROM_EMAIL = 'Ridebuddies <noreply@ridebuddies.de>'
 
 MAILERS = {
     'default': {
