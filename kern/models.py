@@ -340,6 +340,29 @@ class Profil(models.Model):
                               help_text='Ort oder PLZ-Bereich, keine Anschrift.')
     radius_km = models.PositiveSmallIntegerField('Radius (km)', default=50)
 
+    # Koordinaten des Bezugsorts fuer Region + Radius (Karte TASK-120.05,
+    # 23.09.2026). `region` bleibt der Anzeigetext; gerechnet wird mit diesen
+    # beiden Zahlen (Haversine, kern/geo.py).
+    #
+    # NIE FUER ANDERE SICHTBAR - nur fuers Matching und fuer den Inhaber
+    # selbst (sichtbarkeit.eigene_koordinaten). Deshalb stehen sie bewusst NICHT
+    # in FELD_VOREINSTELLUNG: profil_sicht() gibt nur Felder heraus, die dort
+    # stehen, und Profil.clean() weist eine Feldstufe fuer jedes andere Feld
+    # ab. Ein Nutzer kann sie also nicht versehentlich "oeffentlich" stellen.
+    # Warum so streng: Aus Koordinaten plus Radius-Suchen laesst sich ein
+    # Wohnort eingrenzen - das ist mehr, als "Siegburg" verraet.
+    # (Vorgabe der Hauptsitzung im Auftrag zu TASK-120.05, 23.09.2026.)
+    #
+    # Vier Nachkommastellen (~11 m) reichen fuer Ortsmitten; eine Anschrift soll
+    # hier ohnehin nicht stehen. Festlegung (nicht von Fabian entschieden):
+    # Genauigkeit, Feldnamen, "beide oder keins".
+    breitengrad = models.DecimalField(
+        'Breitengrad', max_digits=7, decimal_places=4, null=True, blank=True,
+        help_text='Nur fürs Matching und den Inhaber – nie für andere sichtbar.')
+    laengengrad = models.DecimalField(
+        'Längengrad', max_digits=7, decimal_places=4, null=True, blank=True,
+        help_text='Nur fürs Matching und den Inhaber – nie für andere sichtbar.')
+
     # Wuensche an andere (voreingestellt harte Merkmale).
     geschlechtspraeferenz = models.CharField(max_length=10, choices=Geschlechtspraeferenz.choices,
                                              default=Geschlechtspraeferenz.EGAL)
@@ -385,6 +408,22 @@ class Profil(models.Model):
     class Meta:
         verbose_name = 'Profil'
         verbose_name_plural = 'Profile'
+        constraints = [
+            # Ein halbes Koordinatenpaar waere fuers Matching wertlos und saehe
+            # doch nach "hat Koordinaten" aus.
+            models.CheckConstraint(
+                condition=(Q(breitengrad__isnull=True, laengengrad__isnull=True)
+                           | Q(breitengrad__isnull=False, laengengrad__isnull=False)),
+                name='profil_koordinaten_beide_oder_keine'),
+            models.CheckConstraint(
+                condition=Q(breitengrad__isnull=True) | Q(breitengrad__gte=-90,
+                                                          breitengrad__lte=90),
+                name='profil_breitengrad_im_bereich'),
+            models.CheckConstraint(
+                condition=Q(laengengrad__isnull=True) | Q(laengengrad__gte=-180,
+                                                          laengengrad__lte=180),
+                name='profil_laengengrad_im_bereich'),
+        ]
 
     def __str__(self):
         return f'Profil {self.nutzer}'

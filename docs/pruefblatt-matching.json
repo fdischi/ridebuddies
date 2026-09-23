@@ -1,0 +1,667 @@
+{
+  "karte": "TASK-120.05",
+  "stand": "2026-09-23",
+  "hinweis": "Maschinenlesbare Fassung von docs/pruefblatt-matching.md. Beide müssen dieselben Anker und Personen nennen (kern/tests/test_dummies.py prüft das). Lesarten der harten Filter: siehe Markdown, Abschnitt „Lesarten“ – Annahmen zur Bestätigung durch Fabian.",
+  "gruende": [
+    "radius",
+    "geschlechtspraeferenz",
+    "alterswunsch",
+    "nogo",
+    "nogo_freitext",
+    "ausschluss",
+    "verbindung"
+  ],
+  "maschinell_geprueft": [
+    "radius",
+    "geschlechtspraeferenz",
+    "alterswunsch",
+    "nogo",
+    "ausschluss",
+    "verbindung"
+  ],
+  "nogo_regeln": {
+    "dummy-schotter-nina": {
+      "feld": "alkohol_auf_tour",
+      "verboten": [
+        "egal",
+        "nach_der_fahrt"
+      ],
+      "lesart": "„keinen Tropfen, auch nicht abends“ – reißt „egal“ und „erst nach der Fahrt“"
+    },
+    "dummy-frauen-petra": {
+      "feld": "alkohol_auf_tour",
+      "verboten": [
+        "egal"
+      ],
+      "lesart": "„vor oder während der Fahrt“ – reißt nur „egal“"
+    }
+  },
+  "anker": [
+    {
+      "nutzer": "dummy-schotter-sven",
+      "steckbrief": "Enduro/Schotter aus Siegburg, 35–44, Radius 40 km, zügig, Genießer, Zelt/Pension, kleine Gruppe; Themen Tagestouren, Schrauben, Trainings. Alkohol erst nach der Fahrt. No-Go: Autobahnetappen.",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-schotter-jonas",
+          "entfernung_km": 3.6,
+          "begruendung": {
+            "fahrart": "beide Enduro/Schotter",
+            "tempo": "beide zügig",
+            "tourenformat": "beide Halbtag und Tag",
+            "unterwegs": "Zelt, kleine Gruppe",
+            "themen": "Tagestouren, Trainings, Schrauben – alle drei gemeinsam",
+            "nogo": "Svens No-Go (Autobahnetappen) – Jonas „mal so, mal so“ gibt keinen Hinweis darauf; Jonas hat keins"
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-lea",
+          "entfernung_km": 4.4,
+          "begruendung": {
+            "fahrart": "beide Enduro/Schotter",
+            "tempo": "beide zügig",
+            "unterwegs": "beide Genießer, Zelt/Pension, kleine Gruppe",
+            "themen": "Tagestouren und Trainings gemeinsam",
+            "nogo": "Leas No-Go (querfeldein durch Naturschutzgebiete): Sven fährt laut Profil und Beitrag Schotter, nichts deutet auf Gelände abseits der Wege; Svens Autobahn-No-Go trifft die Genießerin nicht"
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-mehmet",
+          "entfernung_km": 6.0,
+          "begruendung": {
+            "fahrart": "beide Enduro/Schotter und Landstraße",
+            "tempo": "beide zügig",
+            "tourenformat": "beide Halbtag und Tag, 250 km",
+            "themen": "Tagestouren und Schrauben gemeinsam",
+            "sicherheit": "beide volle Schutzkleidung; Mehmets „Alkohol egal“ reißt kein No-Go von Sven",
+            "nogo": "Svens Autobahn-No-Go: kein Hinweis bei Mehmet; Mehmet hat keins"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-schotter-tim",
+          "grund": "alterswunsch",
+          "entfernung_km": 4.1,
+          "begruendung": {
+            "alterswunsch": "Tim wünscht sich 18–24 bis 25–34; Sven ist 35–44. Der harte Filter der Gegenseite greift, obwohl Tim fachlich (Enduro, Troisdorf) passen würde."
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-nina",
+          "grund": "nogo",
+          "entfernung_km": 10.9,
+          "begruendung": {
+            "nogo": "Ninas No-Go: kein Alkohol auf Tour, auch nicht abends. Sven: „erst nach der Fahrt“ – reißt Ninas strenge Fassung."
+          }
+        },
+        {
+          "nutzer": "dummy-eifel-rainer",
+          "grund": "radius",
+          "entfernung_km": 50.2,
+          "begruendung": {
+            "region": "Adenau liegt außerhalb von Svens 40 km, obwohl Rainer Enduro fährt."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-ring-marco",
+      "steckbrief": "Sport/Rennstrecke vom Nürburgring, 35–44, Radius 80 km, sportlich, Streckenfresser, Hotel; Themen Trainings, Tagestouren. Kein Alkohol auf Tour. No-Go: Heizen auf der Landstraße.",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-ring-kevin",
+          "entfernung_km": 66.1,
+          "begruendung": {
+            "fahrart": "beide Sport/Rennstrecke",
+            "tempo": "beide sportlich",
+            "unterwegs": "beide Streckenfresser, Hotel, kleine Gruppe",
+            "themen": "Trainings gemeinsam",
+            "nogo": "Marcos No-Go (Heizen auf der Landstraße): Kevin fährt laut Profil nur Rennstrecke, keine Landstraße, und schreibt im Beitrag „auf der Landstraße fahre ich nach Schild“"
+          }
+        },
+        {
+          "nutzer": "dummy-ring-jens",
+          "entfernung_km": 19.4,
+          "begruendung": {
+            "fahrart": "beide Sport/Rennstrecke",
+            "tempo": "beide sportlich",
+            "unterwegs": "beide Streckenfresser, Hotel, kleine Gruppe",
+            "themen": "Trainings gemeinsam",
+            "sicherheit": "beide kein Alkohol auf Tour, volle Schutzkleidung",
+            "nogo": "Marcos No-Go: Jens fährt laut Profil nur Rennstrecke, keine Landstraße; Jens hat kein No-Go"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-ring-sabine",
+          "grund": "nogo_freitext",
+          "entfernung_km": 44.7,
+          "begruendung": {
+            "nogo": "Marcos No-Go „Heizen auf der Landstraße“: Sabine fährt Sport UND Landstraße, sportlich, als Streckenfresserin, und kein Beitrag entschärft das. Alle maschinell prüfbaren harten Filter besteht sie (44,7 km, beide egal, kein Alterswunsch) – das Urteil muss aus dem Freitext kommen."
+          },
+          "nogo_von": "dummy-ring-marco"
+        },
+        {
+          "nutzer": "dummy-sauerland-kai",
+          "grund": "radius",
+          "entfernung_km": 145.8,
+          "begruendung": {
+            "region": "Meschede liegt außerhalb beider Radien (Marco 80, Kai 80) – obwohl Kai auf die Rennstrecke will."
+          }
+        },
+        {
+          "nutzer": "dummy-fern-bernd",
+          "grund": "radius",
+          "entfernung_km": 415.6,
+          "begruendung": {
+            "region": "München, weit außerhalb beider Radien."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-frauen-anja",
+      "steckbrief": "Landstraße/Touring aus Bonn, Frau, 35–44, Radius 50 km, Präferenz „gleich“, Alterswunsch 25–34 bis 45–54; zügig, Genießer, Pension/Hotel; Themen Tagestouren, Fernreisen, Messen.",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-frauen-carla",
+          "entfernung_km": 24.7,
+          "begruendung": {
+            "geschlechtspraeferenz": "beide Frau, beide „gleich“",
+            "alterswunsch": "Carla 25–34 liegt in Anjas Wunsch",
+            "fahrart": "beide Landstraße und Touring",
+            "tempo": "beide zügig",
+            "unterwegs": "beide Genießer, Pension",
+            "themen": "Tagestouren und Messen gemeinsam",
+            "nogo": "Anjas No-Go (ungefragte Belehrungen): kein Hinweis bei Carla (geübt, nicht erfahrener als Anja); Carla hat keins"
+          }
+        },
+        {
+          "nutzer": "dummy-frauen-melanie",
+          "entfernung_km": 9.9,
+          "begruendung": {
+            "geschlechtspraeferenz": "beide Frau, beide „gleich“",
+            "alterswunsch": "Melanie 45–54 liegt in Anjas Wunsch",
+            "fahrart": "beide Landstraße und Touring",
+            "tempo": "beide zügig",
+            "tourenformat": "beide Tag und Mehrtage",
+            "unterwegs": "Genießer, Pension/Hotel, kleine Gruppe",
+            "themen": "Tagestouren und Fernreisen gemeinsam",
+            "nogo": "Anjas No-Go: kein Hinweis bei Melanie; Melanie hat keins"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-ohne-angabe-robin",
+          "grund": "geschlechtspraeferenz",
+          "entfernung_km": 2.0,
+          "begruendung": {
+            "geschlechtspraeferenz": "Robin gibt kein Geschlecht an. Wer nichts angibt, taucht in „nur Frauen“-Suchen nicht auf (Notiz) – obwohl Robin weich fast deckungsgleich mit Anja ist."
+          }
+        },
+        {
+          "nutzer": "dummy-frauen-petra",
+          "grund": "alterswunsch",
+          "entfernung_km": 8.6,
+          "begruendung": {
+            "alterswunsch": "Petra ist 55–64, Anjas Wunsch endet bei 45–54."
+          }
+        },
+        {
+          "nutzer": "dummy-frauen-ines",
+          "grund": "radius",
+          "entfernung_km": 60.9,
+          "begruendung": {
+            "region": "Montabaur liegt außerhalb von Anjas 50 km und Ines’ 40 km."
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-nina",
+          "grund": "nogo",
+          "entfernung_km": 21.4,
+          "begruendung": {
+            "nogo": "Ninas No-Go (kein Alkohol, auch nicht abends) gegen Anjas „erst nach der Fahrt“ – obwohl beide Touring, Fernreisen und Genießer sind."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-schotter-nina",
+      "steckbrief": "Enduro/Touring aus Neunkirchen-Seelscheid, Frau, 45–54, Radius 50 km, Präferenz „gemischt“; zügig, Genießer, Pension/Hotel; Themen Tagestouren, Fernreisen. Kein Alkohol auf Tour. No-Go: Alkohol auf Tour, auch nicht abends in der Unterkunft.",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-schotter-lea",
+          "entfernung_km": 8.4,
+          "begruendung": {
+            "nogo": "Lea trinkt auf Tour nie – Ninas No-Go bleibt unberührt; Leas No-Go (querfeldein durch Naturschutzgebiete) – nichts bei Nina deutet darauf",
+            "fahrart": "beide Enduro und Touring",
+            "tempo": "beide zügig",
+            "tourenformat": "beide Tag und Mehrtage",
+            "unterwegs": "beide Genießer",
+            "themen": "Tagestouren und Fernreisen gemeinsam"
+          }
+        },
+        {
+          "nutzer": "dummy-westerwald-gabi",
+          "entfernung_km": 29.4,
+          "begruendung": {
+            "nogo": "Gabi trinkt auf Tour nie; Gabis eigenes No-Go (Rauchen in der Pause) – zu Nina steht nichts, was es reißt",
+            "fahrart": "Touring gemeinsam",
+            "tourenformat": "Mehrtage gemeinsam",
+            "unterwegs": "beide Genießer, Pension",
+            "themen": "Fernreisen und Tagestouren gemeinsam"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-schotter-mehmet",
+          "grund": "nogo",
+          "entfernung_km": 10.0,
+          "begruendung": {
+            "nogo": "Mehmet: Alkohol auf Tour „egal“, im Beitrag sogar Bier zur Mittagspause – reißt Ninas No-Go, obwohl er Enduro fährt und 10 km entfernt wohnt."
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-sven",
+          "grund": "nogo",
+          "entfernung_km": 10.9,
+          "begruendung": {
+            "nogo": "Sven: „erst nach der Fahrt“, im Beitrag „abends ein Bier am Zelt“ – reißt Ninas strenge Fassung."
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-jonas",
+          "grund": "nogo",
+          "entfernung_km": 14.2,
+          "begruendung": {
+            "nogo": "Jonas: „erst nach der Fahrt“ – reißt Ninas strenge Fassung."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-westerwald-uwe",
+      "steckbrief": "Touring aus Hachenburg, 55–64, Radius 120 km, gemütlich, Streckenfresser, Zelt/Pension, Mehrtage bis 450 km; Themen Fernreisen, Tagestouren. Kein Alkohol auf Tour. No-Go: jeden Abend Hotel.",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-westerwald-gabi",
+          "entfernung_km": 12.7,
+          "begruendung": {
+            "fahrart": "beide Touring",
+            "tempo": "beide gemütlich",
+            "tourenformat": "beide Mehrtage, 400–450 km",
+            "unterwegs": "beide Zelt/Pension",
+            "themen": "Fernreisen und Tagestouren gemeinsam",
+            "sicherheit": "beide kein Alkohol auf Tour",
+            "nogo": "Uwes No-Go (jeden Abend Hotel): Gabi zeltet auch; Gabis No-Go (Rauchen in der Pause) – zu Uwe steht nichts, was es reißt"
+          }
+        },
+        {
+          "nutzer": "dummy-westerwald-joerg",
+          "entfernung_km": 9.2,
+          "begruendung": {
+            "fahrart": "beide Touring und Landstraße",
+            "tempo": "beide gemütlich",
+            "tourenformat": "beide Mehrtage und Tag, 400–450 km",
+            "unterwegs": "beide Streckenfresser, Zelt, kleine Gruppe",
+            "themen": "Fernreisen und Tagestouren gemeinsam",
+            "sicherheit": "beide kein Alkohol auf Tour",
+            "nogo": "Uwes No-Go: Jörg schläft nur im Zelt; Jörg hat kein No-Go"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-sauerland-heinz",
+          "grund": "nogo_freitext",
+          "entfernung_km": 77.6,
+          "begruendung": {
+            "nogo": "Uwes No-Go „Jeden Abend Hotel – ich schlafe gern im Zelt“: Heinz übernachtet nur in Pension oder Hotel, kein Zelt. Alle maschinell prüfbaren harten Filter besteht er (77,6 km, beide egal, kein Alterswunsch) und passt weich sehr gut – das Urteil muss aus dem Freitext kommen."
+          },
+          "nogo_von": "dummy-westerwald-uwe"
+        },
+        {
+          "nutzer": "dummy-siegen-klaus",
+          "grund": "ausschluss",
+          "entfernung_km": 27.7,
+          "begruendung": {
+            "ausschluss": "Uwe hat die Verbindung mit „passt nicht“ beendet (Dimension Unterwegs) – dauerhaft, in beide Richtungen. Weich wäre Klaus einer der Besten."
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-lea",
+          "grund": "radius",
+          "entfernung_km": 47.0,
+          "begruendung": {
+            "region": "Für Uwe (120 km) nah genug, aber Uwe liegt außerhalb von Leas 40 km – der Radius gilt beidseitig."
+          }
+        },
+        {
+          "nutzer": "dummy-frauen-ines",
+          "grund": "geschlechtspraeferenz",
+          "entfernung_km": 24.7,
+          "begruendung": {
+            "geschlechtspraeferenz": "Ines wünscht „gleich“, Uwe ist ein Mann – obwohl Touring, Mehrtage und Fernreisen passen."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-einsteiger-luca",
+      "steckbrief": "Einsteiger aus Bonn-Bad Godesberg, 18–24, Radius 40 km, Alterswunsch 18–24 bis 25–34; gemütlich, Halbtag, 120 km; Themen Feierabendrunden, Trainings, Tagestouren. No-Go: Wheelies und Rasen in der Gruppe.",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-einsteiger-mia",
+          "entfernung_km": 6.8,
+          "begruendung": {
+            "alterswunsch": "Mia 18–24 liegt in Lucas Wunsch",
+            "fahrart": "beide Landstraße",
+            "tempo": "beide gemütlich",
+            "erfahrung": "beide Einsteiger",
+            "tourenformat": "beide Halbtag, 120 km",
+            "themen": "Feierabendrunden und Trainings gemeinsam",
+            "nogo": "Lucas No-Go (Wheelies und Rasen): Mia fährt gemütlich; Mia hat keins"
+          }
+        },
+        {
+          "nutzer": "dummy-einsteiger-paul",
+          "entfernung_km": 9.8,
+          "begruendung": {
+            "alterswunsch": "Paul 25–34 liegt in Lucas Wunsch",
+            "fahrart": "beide Landstraße",
+            "tempo": "beide gemütlich",
+            "erfahrung": "beide Einsteiger",
+            "themen": "Feierabendrunden, Trainings, Tagestouren – alle drei gemeinsam",
+            "nogo": "Lucas No-Go: Paul fährt gemütlich; Paul hat keins"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-bonn-walter",
+          "grund": "alterswunsch",
+          "entfernung_km": 6.8,
+          "begruendung": {
+            "alterswunsch": "Walter ist 55–64, Lucas Wunsch endet bei 25–34 – obwohl gemütliche Feierabendrunden passen würden."
+          }
+        },
+        {
+          "nutzer": "dummy-frauen-carla",
+          "grund": "geschlechtspraeferenz",
+          "entfernung_km": 31.3,
+          "begruendung": {
+            "geschlechtspraeferenz": "Carla wünscht „gleich“, Luca ist ein Mann."
+          }
+        },
+        {
+          "nutzer": "dummy-schotter-sven",
+          "grund": "alterswunsch",
+          "entfernung_km": 13.4,
+          "begruendung": {
+            "alterswunsch": "Sven ist 35–44, außerhalb von Lucas Wunsch."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-koeln-frank",
+      "steckbrief": "Landstraße/Touring aus Köln, 45–54, Radius 60 km, zügig, Hotel/Pension, mittlere Gruppe; Themen Tagestouren, Fernreisen, Messen. No-Go: Unpünktlichkeit. Hat eine Verbindung (Dirk), einen Ridebuddy (Stefan) und einen Ausschluss (Oliver).",
+      "muss_top5": [
+        {
+          "nutzer": "dummy-koeln-markus",
+          "entfernung_km": 12.7,
+          "begruendung": {
+            "fahrart": "beide Landstraße und Touring",
+            "tempo": "beide zügig",
+            "tourenformat": "beide Tag und Mehrtage",
+            "unterwegs": "beide „mal so, mal so“, Hotel/Pension, mittlere Gruppe",
+            "themen": "Tagestouren, Fernreisen, Messen – alle drei gemeinsam",
+            "nogo": "Franks No-Go (Unpünktlichkeit): kein Hinweis bei Markus; Markus hat keins"
+          }
+        },
+        {
+          "nutzer": "dummy-ohne-angabe-robin",
+          "entfernung_km": 25.0,
+          "begruendung": {
+            "geschlechtspraeferenz": "Frank: „egal“ – Robin ohne Geschlechtsangabe ist für ihn kein Filterfall",
+            "fahrart": "beide Landstraße und Touring",
+            "tempo": "beide zügig",
+            "themen": "Tagestouren, Fernreisen, Messen – alle drei gemeinsam",
+            "nogo": "Franks No-Go: kein Hinweis bei Robin; Robin hat keins"
+          }
+        }
+      ],
+      "nie": [
+        {
+          "nutzer": "dummy-koeln-oliver",
+          "grund": "ausschluss",
+          "entfernung_km": 13.2,
+          "begruendung": {
+            "ausschluss": "Frank hat Olivers Vorschlag (Runde 1) mit „passt nicht“ beantwortet, Dimension Tempo – dauerhaft."
+          }
+        },
+        {
+          "nutzer": "dummy-koeln-dirk",
+          "grund": "verbindung",
+          "entfernung_km": 9.2,
+          "begruendung": {
+            "verbindung": "Schon verbunden (Stufe verbunden) – ein neuer Vorschlag wäre sinnlos."
+          }
+        },
+        {
+          "nutzer": "dummy-koeln-stefan",
+          "grund": "verbindung",
+          "entfernung_km": 10.5,
+          "begruendung": {
+            "verbindung": "Schon Ridebuddies (Stufe 3)."
+          }
+        },
+        {
+          "nutzer": "dummy-frauen-carla",
+          "grund": "geschlechtspraeferenz",
+          "entfernung_km": 0.0,
+          "begruendung": {
+            "geschlechtspraeferenz": "Carla wünscht „gleich“, Frank ist ein Mann – obwohl beide in Köln wohnen."
+          }
+        },
+        {
+          "nutzer": "dummy-westerwald-uwe",
+          "grund": "radius",
+          "entfernung_km": 67.8,
+          "begruendung": {
+            "region": "Hachenburg liegt knapp außerhalb von Franks 60 km."
+          }
+        }
+      ]
+    },
+    {
+      "nutzer": "dummy-fern-bernd",
+      "steckbrief": "Sport/Touring aus München, 45–54, Radius 50 km. Der Störfall „außerhalb jedes Radius“: Im Umkreis wohnt niemand.",
+      "muss_top5": [],
+      "nie": [
+        {
+          "nutzer": "dummy-ring-marco",
+          "grund": "radius",
+          "entfernung_km": 415.6,
+          "begruendung": {
+            "region": "Nürburg, weit außerhalb beider Radien – obwohl Sport/Rennstrecke passt."
+          }
+        },
+        {
+          "nutzer": "dummy-ring-kevin",
+          "grund": "radius",
+          "entfernung_km": 455.8,
+          "begruendung": {
+            "region": "Köln, weit außerhalb beider Radien."
+          }
+        },
+        {
+          "nutzer": "dummy-ring-sabine",
+          "grund": "radius",
+          "entfernung_km": 433.6,
+          "begruendung": {
+            "region": "Bonn, weit außerhalb beider Radien."
+          }
+        }
+      ]
+    }
+  ],
+  "grenzfaelle": [
+    {
+      "paar": [
+        "dummy-bonn-walter",
+        "dummy-frauen-yvonne"
+      ],
+      "entfernung_km": 30.84,
+      "radius_km": 30,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-eifel-rainer",
+        "dummy-einsteiger-mia"
+      ],
+      "entfernung_km": 40.72,
+      "radius_km": 40,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-eifel-rainer",
+        "dummy-frauen-melanie"
+      ],
+      "entfernung_km": 50.62,
+      "radius_km": 50,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-eifel-rainer",
+        "dummy-schotter-mehmet"
+      ],
+      "entfernung_km": 50.12,
+      "radius_km": 50,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-eifel-rainer",
+        "dummy-westerwald-gabi"
+      ],
+      "entfernung_km": 60.63,
+      "radius_km": 60,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-einsteiger-luca",
+        "dummy-koeln-stefan"
+      ],
+      "entfernung_km": 40.3,
+      "radius_km": 40,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-einsteiger-luca",
+        "dummy-ring-jens"
+      ],
+      "entfernung_km": 39.98,
+      "radius_km": 40,
+      "ergebnis": "drin"
+    },
+    {
+      "paar": [
+        "dummy-einsteiger-luca",
+        "dummy-ring-marco"
+      ],
+      "entfernung_km": 40.56,
+      "radius_km": 40,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-frauen-melanie",
+        "dummy-westerwald-uwe"
+      ],
+      "entfernung_km": 49.87,
+      "radius_km": 50,
+      "ergebnis": "drin"
+    },
+    {
+      "paar": [
+        "dummy-koeln-markus",
+        "dummy-ring-jens"
+      ],
+      "entfernung_km": 60.17,
+      "radius_km": 60,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-koeln-oliver",
+        "dummy-westerwald-uwe"
+      ],
+      "entfernung_km": 60.36,
+      "radius_km": 60,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-koeln-stefan",
+        "dummy-westerwald-gabi"
+      ],
+      "entfernung_km": 60.08,
+      "radius_km": 60,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-ohne-angabe-robin",
+        "dummy-westerwald-uwe"
+      ],
+      "entfernung_km": 49.61,
+      "radius_km": 50,
+      "ergebnis": "drin"
+    },
+    {
+      "paar": [
+        "dummy-ring-jens",
+        "dummy-schotter-jonas"
+      ],
+      "entfernung_km": 49.27,
+      "radius_km": 50,
+      "ergebnis": "drin"
+    },
+    {
+      "paar": [
+        "dummy-ring-jens",
+        "dummy-schotter-mehmet"
+      ],
+      "entfernung_km": 49.96,
+      "radius_km": 50,
+      "ergebnis": "drin"
+    },
+    {
+      "paar": [
+        "dummy-ring-marco",
+        "dummy-schotter-jonas"
+      ],
+      "entfernung_km": 50.25,
+      "radius_km": 50,
+      "ergebnis": "draußen"
+    },
+    {
+      "paar": [
+        "dummy-schotter-nina",
+        "dummy-westerwald-joerg"
+      ],
+      "entfernung_km": 49.49,
+      "radius_km": 50,
+      "ergebnis": "drin"
+    }
+  ]
+}

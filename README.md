@@ -3,7 +3,7 @@
 Eine Web-Plattform, auf der Motorradfahrer Gleichgesinnte für Tagestouren, Reisen, Messen und Trainings finden – nicht per Zufall in Foren, sondern über ein Matching aus Fahrart, Fahrstil, Themen, Verfügbarkeit und räumlicher Nähe.
 Kennenlernen zuerst anonym und unverbindlich; jeder bestimmt selbst, wie sichtbar er ist, und gibt Kontaktwege außerhalb der Plattform erst frei, wenn es passt.
 
-**Stand:** in Planung – Datenmodell mit Sichtbarkeitsregeln (App `kern`), Anmeldung über django-allauth, noch keine Oberfläche außer Admin und Login.
+**Stand:** in Planung – Datenmodell mit Sichtbarkeitsregeln (App `kern`), Anmeldung über django-allauth, Dummy-Bestand mit Prüfblatt fürs Matching, noch keine Oberfläche außer Admin und Login.
 
 ## Lizenz
 
@@ -60,6 +60,73 @@ gehört sonst root. Der Dienst läuft als `ridebuddies` mit
 `ProtectSystem=strict` und darf nur unter `/var/lib/ridebuddies` schreiben; eine
 root-eigene Datei dort kann er weder beschreiben noch wegräumen, und die
 Anwendung scheitert dann an „attempt to write a readonly database“.
+
+### Dummy-Bestand
+
+`dummies_anlegen` legt einen festen Bestand zum Prüfen an (Karte TASK-120.05):
+37 Dummies mit Profil, drei Crews, fünf Ausfahrten und zwei Reisen in der Saison
+2027 mit Terminabstimmung, Beiträge, Verbindungen, Ridebuddies und zwei
+Ausschlüsse. Kein Zufall – die Werte stehen wörtlich in `kern/dummies.py`, und
+`docs/pruefblatt-matching.md` sagt, welche Vorschläge das Matching für acht
+Anker-Profile machen muss und welche nie.
+
+Dummies erkennt man an zwei Merkmalen zugleich: Nutzername beginnt mit `dummy-`
+**und** E-Mail endet auf `@example.invalid`. Ihre Adresse ist bestätigt und
+primär, sonst ließe `/konto/login/` sie nicht herein.
+
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py dummies_anlegen
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py dummies_anlegen --kennwort-datei /pfad/zur/datei
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py dummies_anlegen --abraeumen
+
+- **Ohne Option** legt es an, was fehlt, und gleicht an, was vom Bestand im Code
+  abweicht. Ein zweiter Lauf ändert nichts („Nichts geschrieben“). Neue Dummies
+  haben kein nutzbares Kennwort; ein schon gesetztes bleibt stehen.
+- **`--kennwort-datei PFAD`** setzt das Kennwort aus der ersten Zeile der Datei
+  für alle Dummies – nur dort, wo das gespeicherte nicht passt. `PFAD` = `-`
+  liest es von der Standardeingabe (so auf dem Server, siehe unten). Es wird nie
+  ausgegeben und muss Djangos Kennwortregeln genügen. Eine Datei statt eines
+  Arguments, weil ein Argument in der Shell-History und in `ps` stünde. Die
+  Datei gehört nicht ins Repo; eine für Gruppe oder andere zugängliche Datei
+  gibt einen Hinweis (`chmod 600`). Alle Dummies teilen sich einen Hash – bei
+  Wegwerfkonten mit gemeinsamem Kennwort gewollt, weil jeder PBKDF2-Lauf auf
+  VM 140 über eine Sekunde kostet.
+- **`--abraeumen`** löscht alle Dummies samt allem, was an ihnen hängt, und die
+  Crews und Ausfahrten, an denen **nur** Dummies beteiligt sind. Echte Konten
+  bleiben, auch wenn sie mit einem Dummy verbunden waren (die Verbindung
+  verschwindet). Sitzt ein echter Nutzer in einer Dummy-Crew, bleibt die Crew
+  mit ihren Ausfahrten stehen, nur ohne die Dummies.
+
+Alles läuft in einer Transaktion. Bricht es ab – etwa weil ein echter Nutzer
+schon `dummy-schotter-sven` heißt –, bleibt die Datenbank, wie sie war.
+
+**Auf dem Server** mit derselben Umgebung wie bei `email_bestaetigen` (siehe oben)
+und aus demselben Grund als Benutzer `ridebuddies`. Vorher `migrate` – der
+Bestand braucht die Koordinatenfelder aus
+`kern/migrations/0002_profil_koordinaten.py`.
+
+Das Kennwort wird **auf dem Server erzeugt und bleibt dort** – root-eigen, 0600,
+nicht in Git, Vault oder Karte. Fabian liest es selbst aus; die Dummies bleiben
+damit für die Browser-Prüfungen in Schritt 12/13 anmeldbar. Übergeben wird es
+über die Standardeingabe: root öffnet die Datei, `ridebuddies` liest nur den
+geerbten Dateideskriptor. Die Datei muss dafür nie für `ridebuddies` lesbar
+werden. (`--kennwort-datei /dev/stdin` geht unter `runuser` **nicht** – das
+öffnet die Datei über `/proc/self/fd/0` neu, mit den Rechten von `ridebuddies`,
+und scheitert mit „Permission denied“.)
+
+    cd /srv/ridebuddies && set -a; . /etc/ridebuddies/ridebuddies.env; set +a
+    install -d -m 700 /root/.config/ridebuddies
+    test -s /root/.config/ridebuddies/dummy-kennwort || (umask 077; openssl rand -base64 18 > /root/.config/ridebuddies/dummy-kennwort)
+    runuser -u ridebuddies -- env RIDEBUDDIES_SECRET_KEY="$RIDEBUDDIES_SECRET_KEY" RIDEBUDDIES_ALLOWED_HOSTS="$RIDEBUDDIES_ALLOWED_HOSTS" RIDEBUDDIES_DATA_DIR="$RIDEBUDDIES_DATA_DIR" RIDEBUDDIES_STATIC_ROOT="$RIDEBUDDIES_STATIC_ROOT" .venv/bin/python manage.py dummies_anlegen --kennwort-datei - < /root/.config/ridebuddies/dummy-kennwort
+    stat -c '%a %U' /var/lib/ridebuddies/db.sqlite3    # erwartet: 640 ridebuddies
+
+Das `test -s` davor verhindert, dass ein zweiter Aufruf ein neues Kennwort
+würfelt, das Fabian dann nicht kennt. Zeigt `stat` etwas anderes als
+`640 ridebuddies`: `chmod 640 /var/lib/ridebuddies/db.sqlite3` – `migrate` hat
+die Datenbank beim Neuanlegen schon einmal mit 0644 angelegt (Vault-Nachtrag
+zu Schritt 4, Server `enduro-web`).
+
+Abräumen dort genauso, mit `dummies_anlegen --abraeumen` statt
+`--kennwort-datei - < …`. Die Kennwortdatei bleibt dabei liegen.
 
 Tests:
 

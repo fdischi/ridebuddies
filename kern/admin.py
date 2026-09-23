@@ -59,6 +59,9 @@ class NutzerAdmin(UserAdmin):
 
 @admin.register(Profil)
 class ProfilAdmin(admin.ModelAdmin):
+    # Die Koordinaten (TASK-120.05) erscheinen im Bearbeitungsformular wie jedes
+    # andere Feld - der Admin ist Betreiber-Sicht, keine Nutzer-Sicht. In der
+    # Liste stehen sie bewusst nicht: Dort reicht der Anzeigetext `region`.
     list_display = ('nutzer', 'altersbereich', 'region', 'radius_km', 'tempo')
     search_fields = ('nutzer__username', 'region')
 

@@ -146,7 +146,10 @@ def profil_sicht(betrachter, inhaber):
     Leeres dict = nichts sichtbar (Stufe 0). Ab Stufe oeffentlich ist der
     Nutzername immer dabei, dazu jedes Feld, dessen (vom Inhaber gewaehlte oder
     voreingestellte) Stufe <= der Betrachterstufe ist. Die Feldstufen und die
-    hart/weich-Gewichtung selbst gibt diese Funktion nie heraus.
+    hart/weich-Gewichtung selbst gibt diese Funktion nie heraus - ebenso wenig
+    die Koordinaten (breitengrad/laengengrad): Sie stehen nicht in
+    FELD_VOREINSTELLUNG und gehen darum an niemanden, auch nicht auf Stufe
+    Ridebuddies (TASK-120.05). Der Inhaber bekommt sie ueber eigene_koordinaten().
     """
     stufe = stufe_fuer(betrachter, inhaber)
     if stufe == Stufe.KEINE:
@@ -157,6 +160,23 @@ def profil_sicht(betrachter, inhaber):
         if profil.feldstufe(feld) <= stufe:
             sicht[feld] = getattr(profil, feld)
     return sicht
+
+
+def eigene_koordinaten(betrachter, inhaber):
+    """(breitengrad, laengengrad) des `inhaber` - NUR fuer ihn selbst, sonst None.
+
+    Karte TASK-120.05 (23.09.2026): Koordinaten sind fuer andere Nutzer nie
+    sichtbar, auch nicht fuer Ridebuddies. Dies ist der eine Weg, auf dem eine
+    spaetere Profilseite (Schritt 11) dem Inhaber seinen eigenen Bezugsort
+    zeigt. Das Matching (Schritt 8) liest die Felder direkt am Modell und gibt
+    sie an niemanden aus. Hinweis fuer Schritt 8 (nicht entschieden): Eine
+    Vorschlagsbegruendung sollte hoechstens die gerundete Entfernung nennen,
+    nie den Punkt - mehrere genaue Entfernungen zusammen verraten ihn wieder.
+    """
+    if not _angemeldet(betrachter) or inhaber is None or betrachter.pk != inhaber.pk:
+        return None
+    profil = Profil.objects.get(nutzer=inhaber)
+    return (profil.breitengrad, profil.laengengrad)
 
 
 def beitraege_sichtbar(betrachter, inhaber):
