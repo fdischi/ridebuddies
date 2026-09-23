@@ -25,12 +25,13 @@ Entfernungen sind Luftlinie zwischen den Ortsmitten (Haversine, `kern/geo.py`),
 auf 0,1 km gerundet. Zwei Dummies im selben Ort stehen deshalb 0,0 km
 auseinander.
 
-## Lesarten – Annahmen, die Fabian bestätigen oder umwerfen soll
+## Lesarten – von Fabian bestätigt (23.09.2026)
 
 Die Notiz sagt, *welche* Merkmale voreingestellt hart sind (Region + Radius,
 Geschlechtspräferenz, Altersbereich-Wunsch, Verfügbarkeit), aber nicht, *wie*
-genau sie filtern. Dieses Blatt legt es so fest – **jede Zeile ist eine Annahme
-der Bausitzung, nicht Fabians Entscheidung**:
+genau sie filtern. Dieses Blatt legt es so fest. Die Zeilen entstanden als Annahmen der
+Bausitzung; **Fabian hat sie am 23.09.2026 abends gelesen und bestätigt
+(„passt so“, Karte TASK-120.05)** – sie gelten damit als seine Entscheidung:
 
 1. **Beide Seiten zählen.** Ein Vorschlag ist nur zulässig, wenn er die harten
    Filter *beider* Personen einhält – nicht nur die des Ankers. Begründung: Der
