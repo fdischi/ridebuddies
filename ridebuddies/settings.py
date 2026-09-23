@@ -72,9 +72,11 @@ MIDDLEWARE = [
     # Anmeldepflicht global (Fabian, 23.09.2026): ohne Anmeldung leitet jede
     # Seite auf LOGIN_URL um. Ausgenommen ist nur, was mit login_not_required
     # markiert ist - die allauth-Konto-Views (Login, Registrierung,
-    # Passwort vergessen, Bestaetigungslink) tun das selbst, ebenso Djangos
-    # Admin-Login. Unbekannte Pfade loesen nicht auf und enden als 404, ohne
-    # etwas zu zeigen. Belegt in ridebuddies/tests.py.
+    # Passwort vergessen, Bestaetigungslink) tun das selbst, ebenso die
+    # Umleitung unter /admin/login/ auf /konto/login/ (kern/views.py; Djangos
+    # eigenes Admin-Formular ist seit TASK-120.10 nicht mehr erreichbar).
+    # Unbekannte Pfade loesen nicht auf und enden als 404, ohne etwas zu
+    # zeigen. Belegt in ridebuddies/tests.py und kern/tests/test_anmeldung.py.
     'django.contrib.auth.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

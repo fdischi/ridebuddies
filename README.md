@@ -20,11 +20,46 @@ Planung: haus/08-Ideen/Ridebuddies.md (internes Notizbuch, nicht öffentlich)
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py createsuperuser
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py runserver
 
-Ohne Anmeldung leitet jede Seite auf `/konto/login/` um – außer `/admin/`
-selbst, das auf den eigenen Admin-Login `/admin/login/` leitet (die
-Admin-Modellseiten landen wieder auf `/konto/login/`). Die Registrierung ist
-zu, solange `RIDEBUDDIES_REGISTRIERUNG_OFFEN=1` nicht gesetzt ist; Mails
-(E-Mail-Bestätigung) gehen auf die Konsole.
+Ohne Anmeldung leitet jede Seite auf `/konto/login/` um. Das ist die
+einzige Anmeldeseite, auch für die Verwaltung: `/admin/login/` leitet dorthin
+weiter und reicht `next` mit (Vorgabe `/admin/`). Admins (`is_staff`) sehen auf
+der Startseite den Link „Verwaltung“; wer angemeldet, aber kein Admin ist, landet
+von `/admin/` aus auf der Startseite. Die Registrierung ist zu, solange
+`RIDEBUDDIES_REGISTRIERUNG_OFFEN=1` nicht gesetzt ist; Mails (E-Mail-Bestätigung)
+gehen auf die Konsole.
+
+### Einen neuen Superuser nutzbar machen
+
+`createsuperuser` allein reicht nicht. Die E-Mail-Bestätigung ist Pflicht
+(`ACCOUNT_EMAIL_VERIFICATION = 'mandatory'`), und ob eine Adresse bestätigt ist,
+steht nicht am Nutzer, sondern in allauths Tabelle `EmailAddress`. Ein frisch
+angelegter Superuser hat dort keinen Eintrag – `/konto/login/` lässt ihn nicht
+herein, und einen anderen Weg in den Admin gibt es nicht mehr. Deshalb direkt
+danach:
+
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py createsuperuser
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py email_bestaetigen <nutzername>
+
+`email_bestaetigen` trägt die Adresse des Nutzers als bestätigt und primär ein
+(mit `--email adresse` eine andere, die dann auch am Nutzer steht). Es ist
+wiederholbar und bricht ab, wenn die Adresse schon bei einem anderen Nutzer
+bestätigt ist, oder wenn sie schon am Konto eines anderen Nutzers steht.
+
+**Auf dem Server** (als root, Umgebung wie der Dienst, analog zum
+Ausspiel-Rezept aus Schritt 3b):
+
+    cd /srv/ridebuddies && set -a; . /etc/ridebuddies/ridebuddies.env; set +a
+    runuser -u ridebuddies -- env RIDEBUDDIES_SECRET_KEY="$RIDEBUDDIES_SECRET_KEY" RIDEBUDDIES_ALLOWED_HOSTS="$RIDEBUDDIES_ALLOWED_HOSTS" RIDEBUDDIES_DATA_DIR="$RIDEBUDDIES_DATA_DIR" RIDEBUDDIES_STATIC_ROOT="$RIDEBUDDIES_STATIC_ROOT" .venv/bin/python manage.py createsuperuser
+    runuser -u ridebuddies -- env RIDEBUDDIES_SECRET_KEY="$RIDEBUDDIES_SECRET_KEY" RIDEBUDDIES_ALLOWED_HOSTS="$RIDEBUDDIES_ALLOWED_HOSTS" RIDEBUDDIES_DATA_DIR="$RIDEBUDDIES_DATA_DIR" RIDEBUDDIES_STATIC_ROOT="$RIDEBUDDIES_STATIC_ROOT" .venv/bin/python manage.py email_bestaetigen <nutzername> [--email adresse]
+
+Ohne die Umgebung trifft das Kommando die falsche oder gar keine Datenbank
+(ohne `RIDEBUDDIES_SECRET_KEY` startet Django im Betriebsmodus gar nicht).
+**Als Benutzer `ridebuddies`, nicht als root:** Was SQLite beim Schreiben
+anlegt (`db.sqlite3-journal`, bei leerem Verzeichnis die Datenbank selbst),
+gehört sonst root. Der Dienst läuft als `ridebuddies` mit
+`ProtectSystem=strict` und darf nur unter `/var/lib/ridebuddies` schreiben; eine
+root-eigene Datei dort kann er weder beschreiben noch wegräumen, und die
+Anwendung scheitert dann an „attempt to write a readonly database“.
 
 Tests:
 

@@ -2,7 +2,8 @@
 Anmeldepflicht und Konto-Seiten (Karte TASK-120.04, Abnahmekriterium #2).
 
 Fabian, 23.09.2026: Ohne Anmeldung ist nichts zu sehen; jede Seite ausser
-Login/Konto (und dem Admin-Login) leitet um. Bis Schritt 3b antwortete die
+Login/Konto leitet um. Den eigenen Admin-Login gibt es seit TASK-120.10 nicht
+mehr: /admin/login/ leitet auf /konto/login/ (kern/tests/test_anmeldung.py). Bis Schritt 3b antwortete die
 Startseite jedem mit 200 - dieser Test hiess damals test_startseite_antwortet
 und ist jetzt zweigeteilt: ohne Anmeldung Umleitung, mit Anmeldung 200.
 
@@ -43,12 +44,16 @@ class AnmeldepflichtTest(TestCase):
         self.assertEqual(antwort.status_code, 200)
         self.assertContains(antwort, 'Ridebuddies')
 
-    def test_admin_startseite_leitet_auf_admin_login(self):
+    def test_admin_startseite_leitet_ueber_admin_login_zu_konto_login(self):
         # Gemessen 23.09.2026: /admin/ faengt die Admin-Site selbst ab und
-        # leitet auf IHREN Login, nicht auf /konto/login/.
+        # leitet auf IHREN Login /admin/login/. Seit TASK-120.10 steht dort die
+        # Umleitung auf /konto/login/ - zwei Schritte, dann allauth.
         antwort = self.client.get('/admin/')
         self.assertEqual(antwort.status_code, 302)
         self.assertTrue(antwort['Location'].startswith('/admin/login/'), antwort['Location'])
+        antwort = self.client.get(antwort['Location'])
+        self.assertEqual(antwort.status_code, 302)
+        self.assertTrue(antwort['Location'].startswith(LOGIN), antwort['Location'])
 
     def test_admin_inhalte_ohne_anmeldung_leiten_um(self):
         # Modellseiten des Admin laufen durch die LoginRequiredMiddleware und
@@ -78,8 +83,12 @@ class AnmeldepflichtTest(TestCase):
     def test_passwort_vergessen_erreichbar(self):
         self.assertEqual(self.client.get('/konto/password/reset/').status_code, 200)
 
-    def test_admin_login_erreichbar(self):
-        self.assertEqual(self.client.get('/admin/login/').status_code, 200)
+    def test_admin_login_leitet_auf_konto_login(self):
+        # Bis TASK-120.10 antwortete /admin/login/ mit Djangos eigenem
+        # Formular (200) - das zweite Kennwort, das es nicht mehr geben soll.
+        antwort = self.client.get('/admin/login/')
+        self.assertEqual(antwort.status_code, 302)
+        self.assertTrue(antwort['Location'].startswith(LOGIN), antwort['Location'])
 
     def test_anmelden_mit_nutzername_ueber_allauth(self):
         # Belegt, dass allauth mit dem eigenen Nutzermodell und hinter der

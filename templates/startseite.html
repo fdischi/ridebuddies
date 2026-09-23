@@ -7,7 +7,28 @@
   <title>Ridebuddies</title>
 </head>
 <body>
+  {% comment %}
+    Weiter Platzhalter (TASK-120.10, 23.09.2026): Nutzername, Abmelden und
+    der Link auf die Verwaltung - nur fuer is_staff, dieselbe Grenze wie der
+    Admin selbst. Die richtige Oberflaeche kommt mit "Design vor dem Bau" in
+    Etappe 3. Abmelden per POST, weil allauth auf GET nur die Rueckfrage zeigt
+    (ACCOUNT_LOGOUT_ON_GET ist aus) und ein GET-Abmelden von fremden Seiten
+    ausgeloest werden koennte.
+  {% endcomment %}
   <h1>Ridebuddies</h1>
   <p>Eine Plattform für Motorradfahrer, die Mitfahrer suchen – in Planung.</p>
+  {% if messages %}
+  <ul>
+    {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if user.is_authenticated %}
+  <p>Angemeldet als <strong>{{ user.get_username }}</strong>.</p>
+  {% if user.is_staff %}<p><a href="{% url 'admin:index' %}">Verwaltung</a></p>{% endif %}
+  <form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    <button type="submit">Abmelden</button>
+  </form>
+  {% endif %}
 </body>
 </html>
