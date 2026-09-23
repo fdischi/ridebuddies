@@ -128,6 +128,42 @@ zu Schritt 4, Server `enduro-web`).
 Abräumen dort genauso, mit `dummies_anlegen --abraeumen` statt
 `--kennwort-datei - < …`. Die Kennwortdatei bleibt dabei liegen.
 
+### Terminfindung
+
+`terminfindung` zeigt für eine Ausfahrt oder Reise je Kandidaten-Termin einen
+Prozentwert, wer fehlt, wer mit Vorbehalt kommt und wer noch nicht geantwortet
+hat (Karte TASK-120.06). Das ist Rechnen, keine KI; es liest nur. Die Logik
+steht in `kern/terminfindung.py`, samt Begründung jeder Regel im Modulkopf.
+
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py terminfindung <ID oder Teil des Titels>
+
+    Enduro-Grundlagentraining (ID 2, Crew Schotterbande Siegburg)
+    Nenner: 5
+    Sa 08.05.2027 vormittags – 70 % – fehlt: dummy-eifel-rainer – Vorbehalt: dummy-schotter-tim – keine Antwort: –
+    Sa 15.05.2027 vormittags – 70 % – fehlt: dummy-schotter-mehmet – Vorbehalt: dummy-eifel-rainer – keine Antwort: –
+
+Passen mehrere Titel, bricht es ab und nennt sie mit ID. Die Regeln – die
+ersten vier von Fabian entschieden (23.09.2026), der Rest Festlegung:
+
+- **Nenner** einer Crew-Ausfahrt sind alle Mitgliedschaften der Crew, **Gäste
+  eingeschlossen**. Ohne Crew: alle Teilnahmen plus wer vorgeschlagen hat
+  (Festlegung).
+- **Gewicht:** sicher 1, mit Vorbehalt 0,5 (`VORBEHALT_GEWICHT`), nein 0.
+- **Keine Antwort** zählt 0 und bleibt im Nenner, steht aber getrennt unter
+  „keine Antwort“, nicht unter „fehlt“.
+- **Reisen** (Termin mit `bis_datum`): der schlechteste Tag zählt – nein vor
+  keine Antwort (ein nicht abgedeckter Tag) vor Vorbehalt vor sicher.
+- Die Antwort zu **dieser** Ausfahrt geht vor der allgemeinen Verfügbarkeit
+  desselben Tages und derselben Tageszeit; Antworten zu anderen Ausfahrten
+  zählen nicht. Tagestermine lesen nur die Einträge je Tag und Tageszeit,
+  Reisen nur Zeiträume – ein Zeitraum zählt bei einem Tagestermin also nicht,
+  auch ein „nein“ nicht (Festlegung). Ein Termin ohne Tageszeit gilt für den ganzen Tag: die
+  schlechteste der drei Tageszeiten. Eine abgesagte Teilnahme heißt „fehlt“.
+- Gerechnet wird exakt (Bruch), angezeigt auf ganze Prozent **kaufmännisch**
+  gerundet (62,5 → 63; Pythons `round()` gäbe 62). Sortiert wird nach dem
+  exakten Wert, bei Gleichstand nach Datum und Tageszeit. Ist niemand
+  beteiligt, steht „– %“.
+
 Tests:
 
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py test
