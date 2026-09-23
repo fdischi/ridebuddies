@@ -318,13 +318,15 @@ darf oder nur öffentliche, ist offen – die Notiz sagt „Rohmaterial fürs Ma
 ## Terminfälle für Schritt 6
 
 Schritt 6 rechnet je Termin einen Prozentwert aus dem Verfügbarkeitsraster,
-Vorbehalte gewichtet. Wie stark ein Vorbehalt zählt, entscheidet Schritt 6; die
-Fälle hier sind so gewählt, dass die Erwartung bei *jeder* Gewichtung klar ist.
-S = sicher, V = mit Vorbehalt, N = nein.
+Vorbehalte gewichtet. Die Fälle hier sind so gewählt, dass die Erwartung bei
+*jeder* Gewichtung klar ist. S = sicher, V = mit Vorbehalt, N = nein.
 
-**Nenner – offene Frage:** Zählen Gäste zur Crew? In jeder Crew ist einer Gast
-(markiert mit G). Die Tabelle nennt beide Lesarten; bei der crewlosen Ausfahrt
-sind die drei Teilnehmer der Nenner.
+**Entschieden (Fabian, 23.09.2026, TASK-120.06):** Ein Vorbehalt zählt 0,5, und
+Gäste zählen zum Nenner – maßgeblich ist also die Spalte „mit Gast“. In jeder
+Crew ist einer Gast (markiert mit G); die Spalte „ohne Gast“ bleibt als
+verworfene Lesart stehen. Bei der crewlosen Ausfahrt sind die drei Teilnehmer
+der Nenner. Umgesetzt in `kern/terminfindung.py`, Regeln im README unter
+„Terminfindung“.
 
 | Ausfahrt (Crew) | Termin | Antworten | mit Gast | ohne Gast | der Fall |
 |---|---|---|---|---|---|
