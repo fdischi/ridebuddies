@@ -20,4 +20,4 @@ Planung: haus/08-Ideen/Ridebuddies.md (internes Notizbuch, nicht öffentlich)
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py runserver
 
 Im Betrieb kommen `RIDEBUDDIES_SECRET_KEY`, `RIDEBUDDIES_ALLOWED_HOSTS` und
-`RIDEBUDDIES_DATA_DIR` aus der Umgebung, nie aus dem Repo.
+`RIDEBUDDIES_DATA_DIR` (optional `RIDEBUDDIES_STATIC_ROOT`) aus der Umgebung, nie aus dem Repo.

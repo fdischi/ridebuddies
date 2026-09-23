@@ -37,7 +37,8 @@ ALLOWED_HOSTS = [h for h in os.environ.get('RIDEBUDDIES_ALLOWED_HOSTS', '').spli
 if DEBUG and not ALLOWED_HOSTS:
     ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
 
-# Datenbank und gesammelte statische Dateien liegen im Betrieb ausserhalb des Klons.
+# Datenbank und gesammelte statische Dateien liegen im Betrieb ausserhalb des Klons,
+# getrennt, damit nginx die statischen Dateien lesen kann, die Datenbank aber nicht.
 DATA_DIR = Path(os.environ.get('RIDEBUDDIES_DATA_DIR', BASE_DIR))
 
 if not DEBUG:
@@ -135,7 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = DATA_DIR / 'static'
+STATIC_ROOT = Path(os.environ.get('RIDEBUDDIES_STATIC_ROOT', DATA_DIR / 'static'))
 
 
 # Email
