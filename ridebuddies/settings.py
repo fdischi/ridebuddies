@@ -160,6 +160,103 @@ ALLAUTH_TRUSTED_PROXY_COUNT = 1
 RIDEBUDDIES_REGISTRIERUNG_OFFEN = os.environ.get('RIDEBUDDIES_REGISTRIERUNG_OFFEN') == '1'
 
 
+# KI-Urteile fuers Matching (Karte TASK-120.12, Paket kern/urteile/).
+# Welcher Anbieter antwortet: jev | claude | test. Voreinstellung test - der
+# antwortet ohne Netz neutral bzw. aus einer Aufzeichnung, damit weder ein
+# vergessener Schalter noch ein Testlauf Daten an einen US-Dienst schickt.
+# Festlegung (nicht von Fabian entschieden).
+RIDEBUDDIES_KI_ANBIETER = os.environ.get('RIDEBUDDIES_KI_ANBIETER', 'test').strip() or 'test'
+if RIDEBUDDIES_KI_ANBIETER not in ('jev', 'claude', 'test'):
+    raise ImproperlyConfigured('RIDEBUDDIES_KI_ANBIETER muss jev, claude oder test sein.')
+
+
+def _ki_freigabe(roh):
+    """RIDEBUDDIES_KI_FREIGABE = 'nutzername:email' -> (nutzername, email_klein)
+    oder None, wenn leer.
+
+    Entscheidung Fabians (23.09.2026): Sein eigenes Konto darf an die
+    KI-Anbieter und wird hier benannt, GENAU EIN Konto im Format
+    nutzername:email; Nutzername UND E-Mail muessen beide passen. Nicht gesetzt
+    = nur Dummies (kern/urteile/sperre.py).
+    Festlegung (nicht von Fabian entschieden): E-Mail ohne Gross/Klein; ein
+    Komma (= Versuch, mehrere Konten freizugeben) oder ein kaputter Eintrag
+    bricht den Start ab, statt still niemanden oder den Falschen freizugeben.
+    Die Meldung nennt den Wert NICHT - er ist eine E-Mail-Adresse und landete
+    sonst im Journal."""
+    roh = roh.strip()
+    if not roh:
+        return None
+    if ',' in roh:
+        raise ImproperlyConfigured('RIDEBUDDIES_KI_FREIGABE nimmt genau ein Konto '
+                                   '(nutzername:email), keine Liste.')
+    name, _, email = roh.partition(':')
+    name, email = name.strip(), email.strip().lower()
+    if not name or '@' not in email or ':' in email:
+        raise ImproperlyConfigured('RIDEBUDDIES_KI_FREIGABE braucht die Form nutzername:email.')
+    return (name, email)
+
+
+RIDEBUDDIES_KI_FREIGABE = _ki_freigabe(os.environ.get('RIDEBUDDIES_KI_FREIGABE', ''))
+
+# Modelle. Jev meldet in der Antwort die tatsaechliche Version (jev-1.13.0 ...),
+# die steht dann im Urteil; hier steht nur, was angefragt wird.
+RIDEBUDDIES_JEV_MODELL = os.environ.get('RIDEBUDDIES_JEV_MODELL', 'jev-latest')
+RIDEBUDDIES_CLAUDE_MODELL = os.environ.get('RIDEBUDDIES_CLAUDE_MODELL', 'claude-haiku-4-5')
+# Zeitlimit je HTTP-Versuch in Sekunden (Wiederholungen: kern/urteile/netz.py).
+def _ki_zeitlimit(roh):
+    """Sekunden, ueber 0 und hoechstens 600 (Festlegung) - sonst bricht der Start
+    ab wie bei den Nachbarn, statt spaeter an einem Zeitlimit 'abc' zu scheitern."""
+    try:
+        wert = float(roh)
+    except ValueError:
+        wert = 0.0
+    if not 0 < wert <= 600:   # auch nan und inf fallen hier durch
+        raise ImproperlyConfigured('RIDEBUDDIES_KI_ZEITLIMIT muss eine Zahl von Sekunden '
+                                   'über 0 und höchstens 600 sein.')
+    return wert
+
+
+RIDEBUDDIES_KI_ZEITLIMIT = _ki_zeitlimit(os.environ.get('RIDEBUDDIES_KI_ZEITLIMIT', '30'))
+# Test-Anbieter: Aufzeichnung, aus der er antwortet (JSON, siehe
+# kern/urteile/aufzeichnung.py). Leer = neutrale Antworten.
+RIDEBUDDIES_KI_AUFZEICHNUNG = os.environ.get('RIDEBUDDIES_KI_AUFZEICHNUNG', '')
+# Echte Anbieter: jede Antwort zusaetzlich in diese Datei mitschneiden (ohne
+# Zustand, Fragetext und Schluessel). Leer = kein Mitschnitt.
+RIDEBUDDIES_KI_MITSCHNITT = os.environ.get('RIDEBUDDIES_KI_MITSCHNITT', '')
+# Die API-Schluessel stehen absichtlich NICHT hier: RIDEBUDDIES_JEV_SCHLUESSEL
+# und RIDEBUDDIES_ANTHROPIC_SCHLUESSEL (oder je *_DATEI) liest
+# kern/urteile/anbieter.py erst beim Aufruf aus der Umgebung. Djangos
+# Fehlerseite blendet nur Einstellungen mit KEY/SECRET/TOKEN/... im Namen aus,
+# "SCHLUESSEL" stuende dort im Klartext.
+
+# Protokoll der KI-Urteile ins Journal (Entscheidung Fabians, 24.09.2026).
+# Der Logger ridebuddies.urteile schreibt ab INFO auf stderr; die systemd-Unit
+# reicht stderr an journald weiter (journalctl -u ridebuddies.service), lokal steht es
+# im Terminal. Inhalt nur Anbieter, Modell, Kennung, Form, Dauer, Tokens,
+# Anzahl der Betroffenen und Fehlerart - nie Personendaten (kern/urteile/
+# __init__.py, belegt in kern/tests/test_urteile.py).
+# propagate=False, damit eine spaetere Wurzel-Konfiguration die Zeilen nicht
+# doppelt oder anderswohin schreibt; disable_existing_loggers=False und nur
+# dieser eine Logger, damit Djangos eigene Protokollierung bleibt, wie sie ist.
+# Ohne diesen Block gingen INFO-Zeilen ("urteil ok") nirgendwohin und nur
+# WARNING ueber Pythons lastResort auf stderr (Stand vor dem 24.09.2026).
+# Kein Zeitstempel im Format: den setzt journald.
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'journal': {'format': '%(levelname)s %(name)s %(message)s'},
+    },
+    'handlers': {
+        'ki_journal': {'class': 'logging.StreamHandler', 'formatter': 'journal'},
+    },
+    'loggers': {
+        'ridebuddies.urteile': {'handlers': ['ki_journal'], 'level': 'INFO',
+                                'propagate': False},
+    },
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 

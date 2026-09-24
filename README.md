@@ -3,7 +3,7 @@
 Eine Web-Plattform, auf der Motorradfahrer Gleichgesinnte für Tagestouren, Reisen, Messen und Trainings finden – nicht per Zufall in Foren, sondern über ein Matching aus Fahrart, Fahrstil, Themen, Verfügbarkeit und räumlicher Nähe.
 Kennenlernen zuerst anonym und unverbindlich; jeder bestimmt selbst, wie sichtbar er ist, und gibt Kontaktwege außerhalb der Plattform erst frei, wenn es passt.
 
-**Stand:** in Planung – Datenmodell mit Sichtbarkeitsregeln (App `kern`), Anmeldung über django-allauth, Dummy-Bestand mit Prüfblatt fürs Matching, noch keine Oberfläche außer Admin und Login.
+**Stand:** in Planung – Datenmodell mit Sichtbarkeitsregeln (App `kern`), Anmeldung über django-allauth, Dummy-Bestand mit Prüfblatt fürs Matching, Terminfindung, KI-Urteils-Schnittstelle mit Datensperre (noch ohne Live-Lauf), noch keine Oberfläche außer Admin und Login.
 
 ## Lizenz
 
@@ -163,6 +163,53 @@ ersten vier von Fabian entschieden (23.09.2026), der Rest Festlegung:
   gerundet (62,5 → 63; Pythons `round()` gäbe 62). Sortiert wird nach dem
   exakten Wert, bei Gleichstand nach Datum und Tageszeit. Ist niemand
   beteiligt, steht „– %“.
+
+### KI-Urteile
+
+`kern/urteile/` ist die austauschbare Schnittstelle zu den KI-Anbietern
+(Karte TASK-120.12). Das Matching ruft nur `kern.urteile.beurteilen(...)` auf
+und kennt den Anbieter nicht. Drei Urteilsformen wie bei Jev: `Noul`
+(ja/nein-Wahrscheinlichkeit), `Auswahl` (feste Optionen) und `Stufenwert`
+(2–10 geordnete Stufen). Das Ergebnis ist ein typisiertes Urteil mit Wert,
+Vertrauen, Verteilung, Anbieter, gemeldetem Modell und Tokens.
+
+| Variable | Bedeutung |
+|---|---|
+| `RIDEBUDDIES_KI_ANBIETER` | `jev`, `claude` oder `test` (Voreinstellung `test`: kein Netz, neutrale Antworten oder Aufzeichnung) |
+| `RIDEBUDDIES_KI_FREIGABE` | `nutzername:email` – genau ein echtes Konto (Fabians), das außer Dummies an die KI darf; leer = nur Dummies, eine Liste bricht den Start ab |
+| `RIDEBUDDIES_JEV_SCHLUESSEL` / `…_DATEI` | Jev-Schlüssel direkt oder als Pfad (erste Zeile) |
+| `RIDEBUDDIES_ANTHROPIC_SCHLUESSEL` / `…_DATEI` | Anthropic-Schlüssel direkt oder als Pfad |
+| `RIDEBUDDIES_JEV_MODELL`, `RIDEBUDDIES_CLAUDE_MODELL` | Voreinstellung `jev-latest` bzw. `claude-haiku-4-5` |
+| `RIDEBUDDIES_KI_ZEITLIMIT` | Sekunden je HTTP-Versuch (über 0, höchstens 600), Voreinstellung 30 |
+| `RIDEBUDDIES_KI_AUFZEICHNUNG` | JSON-Datei, aus der der Test-Anbieter antwortet |
+| `RIDEBUDDIES_KI_MITSCHNITT` | JSON-Datei, in die ein echter Anbieter jede Antwort mitschreibt: Hash und Urteil, ohne Zustand, Anweisung, Stufen- oder Optionsbeschreibungen und Schlüssel; die Optionsnamen einer Auswahl stehen als Schlüssel der Verteilung drin |
+
+Schlüssel liegen nie im Repo: auf enduro-web in `/etc/ridebuddies/ridebuddies.env`,
+auf VM 140 unter `~/.config/ridebuddies/` (0600) über die `_DATEI`-Variante.
+Fehlt der Schlüssel, wird nichts gesendet (`SchluesselFehlt`).
+
+**Datensperre** (Fabian, 23.09.2026): Jeder Aufruf nennt die betroffenen Nutzer
+(`betrifft=[…]`, Pflicht). Durch kommt nur, wer Dummy ist (`dummy-` **und**
+`@example.invalid`) oder das freigegebene Konto (Name **und** E-Mail) – und in
+beiden Fällen eine aktive Einwilligung „KI-Auswertung“ hat. Sonst
+`DatensperreVerletzt`, und kein Anbieter wird gefragt, auch nicht der
+Test-Anbieter. Die Sperre sitzt im Einstieg und zusätzlich in jedem Anbieter
+(`beantworten(…, betrifft=…)`), hält also auch einen direkten Aufruf auf.
+Eine Einwilligung zählt erst ab ihrem Erteilungszeitpunkt.
+
+Das Protokoll (Logger `ridebuddies.urteile`, ab INFO auf stderr, auf
+enduro-web also im Journal von `ridebuddies.service`; Fabian, 24.09.2026)
+enthält nur Anbieter, Modell, Kennung, Form, Dauer, Tokens, Anzahl der
+Betroffenen und Fehlerart – keinen Zustand, keinen Namen, keine ID.
+
+`ki_vergleich` stellt dieselbe feste Frage (Uwes Freitext-No-Go gegen Heinz,
+alle drei Formen) an Jev und Claude und zeigt die Urteile nebeneinander.
+Ohne Schlüssel meldet es den Anbieter als übersprungen. Vorher muss
+`dummies_anlegen` gelaufen sein.
+
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py ki_vergleich
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py ki_vergleich --anbieter test
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py ki_vergleich --mitschnitt docs/ki-aufzeichnung.json
 
 Tests:
 
