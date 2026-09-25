@@ -47,6 +47,7 @@ from kern.models import (
     Ausschluss,
     Beitrag,
     Crew,
+    Einwilligung,
     Mitgliedschaft,
     Profil,
     RidebuddyAnfrage,
@@ -269,6 +270,15 @@ class BestandTest(TestCase):
                      .values_list('stufe', flat=True))
         self.assertEqual(stufen, {1, 2, 3})
 
+    def test_alle_dummies_haben_die_ki_einwilligung(self):
+        # Fabian, 24.09.2026 (TASK-120.13): ohne KI-Einwilligung keine Anmeldung,
+        # also auch kein Dummy ohne sie - Robin eingeschlossen.
+        ohne = dummies.dummies().exclude(
+            einwilligungen__art=Einwilligung.Art.KI_AUSWERTUNG,
+            einwilligungen__widerrufen_am__isnull=True)
+        self.assertEqual(list(ohne.values_list('username', flat=True)), [])
+        self.assertEqual(dummies.OHNE_KI_EINWILLIGUNG, set())
+
     def test_zusammenfassung(self):
         self.assertIn('Nutzer', self.ausgabe)
         # Beim Erstlauf ist das Fuellen des Signal-Profils "neu", nicht "angeglichen".
@@ -301,6 +311,17 @@ class IdempotenzTest(TestCase):
         self.assertEqual(_profil('dummy-schotter-sven').tempo, 'zuegig')
         self.assertEqual(_profil('dummy-schotter-jonas').geaendert, andere)
         self.assertIn('Angeglichen', ausgabe)
+
+    def test_ki_einwilligung_wird_auf_altem_bestand_nachgezogen(self):
+        # Ein Bestand von vor dem 24.09.2026: Robin ohne KI-Einwilligung.
+        _anlegen()
+        robin = Einwilligung.objects.filter(nutzer__username='dummy-ohne-angabe-robin',
+                                            art=Einwilligung.Art.KI_AUSWERTUNG)
+        robin.delete()
+        ausgabe = _anlegen()
+        self.assertEqual(robin.count(), 1)
+        self.assertRegex(ausgabe, r'Neu angelegt:\n\s+Einwilligung\s+1\n')
+        self.assertIn('Nichts geschrieben', _anlegen())
 
     def test_echter_nutzer_mit_dummy_namen_bricht_ab_ohne_aenderung(self):
         get_user_model().objects.create_user(
@@ -582,6 +603,14 @@ class PruefblattTest(TestCase):
                 andere = set(Mitgliedschaft.objects.filter(nutzer__username=name)
                              .values_list('crew_id', flat=True))
                 self.assertFalse(crews & andere, f"{anker['nutzer']} - {name}")
+
+    def test_robins_beitragssignal_als_ueberholt_markiert(self):
+        # Nicht geloescht, sondern markiert (Auftrag TASK-120.13).
+        zeile = next(z for z in self.markdown.splitlines()
+                     if z.startswith('| dummy-ohne-angabe-robin | öffentlich'))
+        self.assertIn('~~**darf nicht wirken:**', zeile)
+        self.assertIn('überholt 24.09.2026', zeile)
+        self.assertEqual(self.blatt['ueberholt'][0]['datum'], '2026-09-24')
 
     def test_nogo_regeln_passen_zum_freitext(self):
         for name in self.regeln:

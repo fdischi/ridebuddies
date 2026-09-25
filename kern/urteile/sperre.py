@@ -21,8 +21,10 @@ Durchgelassen wird ein Nutzer also nur, wenn BEIDES gilt:
     Festlegung, nicht von Fabian entschieden).
  2. Aktive Einwilligung Art KI_AUSWERTUNG (widerrufen_am leer, erteilt_am
     nicht in der Zukunft - Festlegung, siehe unten) - auch fuer
-    Dummies und Fabian. Robin (dummy-ohne-angabe-robin) hat keine und bleibt
-    deshalb draussen, obwohl er ein Dummy ist.
+    Dummies und Fabian. Robin (dummy-ohne-angabe-robin) hatte bis 24.09.2026
+    keine und blieb deshalb draussen, obwohl er ein Dummy ist. Seitdem haben
+    alle Dummies sie (Fabian, TASK-120.13, siehe kern/dummies.py); die
+    Pruefung hier ist unveraendert.
 
 WO DIE SPERRE SITZT: zweimal. Im gemeinsamen Einstieg
 (kern/urteile/__init__.py, beurteilen()), VOR der Wahl des Anbieters - dort

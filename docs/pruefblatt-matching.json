@@ -663,5 +663,14 @@
       "radius_km": 50,
       "ergebnis": "drin"
     }
+  ],
+  "ueberholt": [
+    {
+      "datum": "2026-09-24",
+      "karte": "TASK-120.13",
+      "betrifft": "Beitragssignal dummy-ohne-angabe-robin (nur im Markdown, Abschnitt „Beitragssignale für Schritt 9“)",
+      "vorher": "darf nicht wirken: Robin hat keine Einwilligung zur KI-Auswertung",
+      "jetzt": "Robin hat die Einwilligung wie alle Dummies; Fabian: „Wer keine KI-Einwilligung gibt, darf sich später gar nicht anmelden; das System basiert auf der KI-Auswertung. Gib jetzt allen Testdaten und meinem Account die Einwilligung zum Testen.“"
+    }
   ]
 }

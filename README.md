@@ -211,6 +211,161 @@ Ohne Schlüssel meldet es den Anbieter als übersprungen. Vorher muss
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py ki_vergleich --anbieter test
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py ki_vergleich --mitschnitt docs/ki-aufzeichnung.json
 
+### Matching
+
+`kern/matching/` rechnet Vorschläge **je Anker** (Karte TASK-120.13, Schritt 8).
+Es gibt keinen Aufruf ohne Anker, keine Rangliste über alle und keine
+gespeicherte Punktzahl (Fabian, 24.09.2026).
+
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py matching_urteile --nur-zaehlen
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py matching_urteile --anbieter test --aufzeichnung docs/ki-aufzeichnung-jev.json
+    RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py vorschlaege dummy-westerwald-uwe [--anzahl 5] [--alle]
+    # live, schneidet mit:
+    RIDEBUDDIES_DEBUG=1 RIDEBUDDIES_JEV_SCHLUESSEL_DATEI=~/.config/ridebuddies/jev \
+      .venv/bin/python manage.py matching_urteile --anbieter jev --mitschnitt docs/ki-aufzeichnung-jev.json
+
+`matching_urteile` holt nur fehlende oder veraltete Urteile und speichert sie
+(`PaarUrteil`, `MerkmalUrteil`, Migration `0003_matching_urteile`). `vorschlaege`
+liest nur gespeicherte Urteile und fragt keinen Anbieter (`--holen` fragt nach).
+`--alle` zeigt Ausgeschlossene mit Grund. Das ist ein Betreiberwerkzeug, die
+Gründe verraten Profilwerte.
+
+Die beiden Aufzeichnungen `docs/ki-aufzeichnung-{jev,claude}.json` enthalten
+neben den Paarurteilen (f3) und den Regeln der Fassung r2 auch noch die
+Regel-Einträge der verworfenen Fassung r1. Sie werden nicht mehr abgefragt und
+sind harmlos (nur Hash und Urteil); sie bleiben, damit ältere Messungen
+nachvollziehbar sind.
+
+**Ablauf je Kandidat:** Grundmenge (aktives Konto mit aktiver KI-Einwilligung)
+→ harte Filter nach den Lesarten des Prüfblatts, beidseitig (`filter.py`) →
+weiche Merkmale, die eine Seite auf „hart“ gestellt hat (`dimensionen.py`) →
+No-Go (`nogo.py`) → Punktzahl aus den weichen Merkmalen des Ankers.
+Gleichstand: Entfernung, dann Nutzername.
+
+**No-Go, zwei Bausteine, beide hart:**
+1. *Regeln je Person:* Einmal je No-Go-Inhaber fragt eine Anfrage je
+   Ausprägung eines **Verhaltensmerkmals** (Alkohol auf Tour, Schutzkleidung),
+   ob schon diese Angabe gegen das No-Go verstößt. Den Abgleich mit dem
+   Gegenüber rechnet der Code. Stilmerkmale (Tempo, Unterwegs, Erfahrung,
+   Gruppe) haben seit der Fassung r2 (25.09.2026) keine Regeln mehr. Ein No-Go
+   gegen einen Fahrstil meint fast immer eine Kombination, und die sieht nur
+   das Paarurteil.
+2. *Paarurteil:* Je Richtung eine Frage mit As No-Go, As und Bs Merkmalen
+   (Fassung `f3`, Stufenwert, 0..1 umgerechnet).
+
+Fehlt ein Urteil oder ist es veraltet, fällt der Kandidat mit `nogo_offen`
+heraus. Das hat Fabian am 25.09.2026 entschieden: „Rausfallen, bis nachgeholt.“ Die Folge:
+Fällt der Anbieter aus, bekommen Personen mit No-Go und ihre Gegenüber
+vorübergehend keine Vorschläge füreinander, bis `matching_urteile` nachgeholt
+hat. Ist der Regel-Baustein für einen Anbieter abgeschaltet, wird er weder
+geholt noch als offen gewertet. Ein KI-Urteil legt nie einen `Ausschluss` an.
+Für einen Anbieter ohne vermessene Schwelle gibt es keinen Ersatzwert, sondern
+den Fehler `SchwelleFehlt`.
+
+| Konstante | Wert | wo |
+|---|---|---|
+| `GEWICHTE` | Fahrart 3 · Tempo 2 · Unterwegs 2 · Tourenformat 1,5 · Themen 1,5 · Erfahrung 1 · Sicherheit 1 · Motorrad 0 · Region 2 (nur wenn weich) | `ranking.py` |
+| `SCHWELLEN` (Paarurteil) | jev 0,37 · claude 0,73 · test 0,5 (nur feste Vorgaben in Tests) | `nogo.py` |
+| `REGEL_SCHWELLEN` | jev 0,31 · claude abgeschaltet · test 0,5 | `nogo.py` |
+| `RUNDUNG_KM` | 5 (unter 5 km: „unter 5 km“) | `ranking.py` |
+| `NEUTRAL` | 0,5 für „keine Angabe“ in der Punktzahl | `dimensionen.py` |
+
+**Festlegungen (nicht von Fabian entschieden, umwerfbar):**
+- Geschlechtspräferenz und Alterswunsch auf „weich“ gestellt = ohne Wirkung.
+  Grund: Fabians Regel „nur als Nutzerwunsch-Filter, nie als weiche Bewertung“.
+- Was „hart“ bei einem weichen Merkmal heißt (mindestens ein gemeinsamer Wert,
+  gleiches Tempo usw.): `dimensionen.py`, Modulkopf. Fehlende Angabe = besteht.
+- Wiedervorlage: „nicht jetzt“ bei Vorschlag oder Verbindung sperrt das Paar bis
+  `wiedervorlage_ab`. Die Ausnahme „wesentliche Profiländerung“ ist nicht gebaut.
+- Die Begründung nennt Werte des Kandidaten nur, wenn sein Feld auf „öffentlich“
+  steht. Sicherheit (voreingestellt „verbunden“) bekommt keinen wertenden Text.
+  Geschlecht und Alter kommen in der Begründung nie vor.
+- Der No-Go-Zustand enthält keine Namen, kein Geschlecht, kein Alter, keinen Ort
+  und **keine Beiträge**. Beiträge kommen in Schritt 9, mit eigenem Nachweis.
+  Die Begründung zeigt davon nie etwas (`nogo.py`, Modulkopf).
+- Motorrad hat das Gewicht 0: Es ist Freitext, und ohne Katalog lässt es sich nicht vergleichen.
+- Regeln gibt es nur für Verhaltensmerkmale mit Einfachwahl. Bei Mehrfachwahl
+  wie „Pension, Hotel“ ist offen, ob ein verbotener Wert reicht.
+- `Bewertung.intern_entfernung_km` ist ungerundet und nur intern (Sortierung,
+  Betreiberkommando). Nutzer bekommen nur `begruendung['region']`.
+- Ein Urteil je Richtung und Dimension. Ist es veraltet, wird es überschrieben. Der Anbieter
+  gehört nicht zum Schlüssel; nach einem Anbieterwechsel `matching_urteile --neu`.
+- Claude antwortet mit Temperatur 0 und ohne `strict`. Die API lehnt `strict` zusammen mit `minimum`/`maximum`
+  ab (Probe am 25.09.2026, HTTP 400). Näheres im Modulkopf von `kern/urteile/claude.py`.
+
+**Ergebnis gegen das Prüfblatt** (`kern/tests/test_matching.py`, offline): Mit
+`docs/ki-aufzeichnung-jev.json` stimmt das Blatt vollständig: alle Muss-Kandidaten in den ersten fünf,
+kein Nie-Kandidat zulässig, fern-bernd und fern-hanna leer, 17 Grenzfälle
+wie im Blatt. Mit `docs/ki-aufzeichnung-claude.json` weicht es an acht
+erklärten Stellen ab (`ABWEICHUNGEN_CLAUDE` im Test): Claude Haiku 4.5 trennt
+die Freitextfälle Heinz und Sabine nicht von Muss-Paaren und erkennt Ninas
+strenges Alkohol-No-Go nicht.
+
+**Fragefassungen** (Entwicklungssatz aus 30 gerichteten Paaren, live am
+24./25.09.2026; Werte = Konfliktwert 0..1):
+
+| Fassung | Anbieter | Muss max | Marco→Sabine | Uwe→Heinz | Nina→Sven | Nina→Jonas | Nina→Mehmet | Nina→Anja |
+|---|---|---|---|---|---|---|---|---|
+| f0 (Frage aus `ki_vergleich`) | jev | 0,380 | 0,330 | 0,330 | 0,260 | 0,330 | 0,700 | 0,280 |
+| f0 | claude | 0,950 | 0,150 | 0,950 | 0,050 | 0,050 | 0,950 | 0,050 |
+| f1 (+ „sinngemäß lesen“) | jev | 0,480 | 0,500 | 0,290 | 0,320 | 0,310 | 0,730 | 0,280 |
+| f1 | claude | 0,950 | 0,150 | 0,950 | 0,050 | 0,050 | 0,850 | 0,050 |
+| f2 (+ As Merkmale) | jev | 0,320 | 0,340 | 0,680 | 0,270 | 0,260 | 0,540 | 0,330 |
+| f2 | claude | 0,150 | 0,150 | 0,850 | 0,150 | 0,150 | 0,750 | 0,750 |
+| **f3** (Stufenwert, gültig) | jev | 0,340 | 0,398 | 0,820 | 0,338 | 0,315 | 0,595 | 0,385 |
+| **f3** | claude | 0,725 | 0,650 | 0,725 | 0,637 | 0,600 | 0,575 | 0,700 |
+| f4 (Noul, Text wie f3) | jev | 0,290 | 0,300 | 0,750 | 0,220 | 0,220 | 0,370 | 0,240 |
+| f4 | claude | 0,150 | 0,150 | 0,050 | 0,750 | 0,750 | 0,750 | 0,850 |
+| f5 (f3 + „außerhalb des Fahrens“) | jev | 0,412 | 0,403 | 0,865 | 0,318 | 0,370 | 0,603 | 0,407 |
+| f6 („wörtlich und eng“, verworfen) | jev | 0,335 | 0,328 | 0,690 | – | – | – | – |
+
+Jev trennt nur mit f3 beide Freitextfälle von allen Muss-Paaren, und das mit schmaler
+Lücke (0,340 gegen 0,398). Keine Fassung trennt Ninas „erst nach der Fahrt“.
+Daher kommen die Regeln je Person (Baustein 1). Mit ihnen sieht Jev das:
+in der geltenden Fassung r2 Nina „nach der Fahrt“ 0,41, „egal“ 0,70 und Petra
+„egal“ 0,53; der höchste Nicht-Treffer liegt bei 0,21 (Luca „egal“), Schwelle
+0,31. (In der verworfenen r1: Nina 0,42/0,65 gegen Marcos harmlose Treffer
+0,30/0,29.)
+Alle Fassungen stehen in `nogo.FASSUNGEN`, auch die verworfenen.
+
+**Regelfassungen:** r1 fragte alle sechs Einfachwahl-Merkmale ab und ist verworfen.
+Jev gab dort Svens No-Go „Autobahnetappen“ gegen „Streckenfresser“ 0,45 und schloss damit
+über die Regel Oliver, Kevin und Sabine aus. r2 fragt nur die Verhaltensmerkmale
+ab (Live-Lauf 25.09.2026, 10 Anfragen je Anbieter). Jev: Nina „nach der Fahrt“
+0,41, „egal“ 0,70, Petra „egal“ 0,53, der höchste Nicht-Treffer 0,21, Schwelle
+0,31. Claude bleibt unbrauchbar (Gabi, No-Go Rauchen, bekommt Alkohol „nie“ 1,0).
+`RegelAusschluesseTest` prüft über alle Anker, dass eine Regel nur dort
+ausschließt, wo das Prüfblatt eine nennt (`nogo_regeln`). Gegen r1 schlägt der
+Test fehl, und zwar an Sven und „Streckenfresser“.
+
+**Ausschlüsse über das Paarurteil, die nicht im Prüfblatt stehen** (Jev, Stand
+25.09.2026; das Blatt sagt zu ihnen nichts, sie sind also keine Fehler gegen
+das Blatt, aber eine Lesart des Modells):
+
+| Anker | fällt über das Paarurteil heraus | Wert |
+|---|---|---|
+| Sven („Autobahnetappen, nur um Strecke zu machen“) | Kevin, Sabine, Oliver, Stefan, Dirk | 0,690 · 0,630 · 0,600 · 0,388 · 0,383 |
+| Marco | Uwe (Uwes No-Go gegen Marcos „nur Hotel“) | 0,860 |
+| Anja („ungefragte Belehrungen“) | Sabine, Ayse | 0,415 · 0,383 |
+| Nina | Uwe (Uwes No-Go) | 0,777 |
+| Uwe („jeden Abend Hotel“) | Marco, Jens, Robin, Kevin, Sabine, Nina, Mehmet | 0,860 … 0,520 |
+| Luca („Wheelies und Rasen“) | Kevin, Tim, Jonas, Lea | 0,603 · 0,585 · 0,480 · 0,430 |
+| Frank, fern-bernd, fern-hanna | niemand | – |
+
+Uwes Ausschlüsse sind in sich stimmig: Alle Genannten übernachten nur in Pension oder Hotel. Svens Dirk und Stefan
+(0,383/0,388) liegen knapp über der Schwelle 0,37.
+
+**Bekannte Schwäche, hingenommen** (Fabian, 25.09.2026: „eine neue Paarfassung,
+sonst hinnehmen“). Der eine Versuch f6 („wörtlich und eng lesen“) ist verworfen.
+Vorher festgelegte Regel: f6 ersetzt f3 nur, wenn mit Jev (a) das Prüfblatt voll erfüllt
+bleibt, (b) die ungedeckten Ausschlüsse weniger werden und (c) die Lücke
+zwischen höchstem Muss-Paar und niedrigerem Freitext-Nie-Fall nicht unter 0,058
+fällt. Auf dem Entwicklungssatz (32 Paare, Jev) lag Marco→Sabine bei 0,328,
+also unter dem höchsten Muss-Paar Uwe→Gabi (0,335). Die Lücke ist damit
+−0,007, und (a) und (c) sind verfehlt. (b) wäre erreicht gewesen (Svens fünf
+0,278–0,438, Lucas vier 0,270–0,420, Anjas zwei 0,270/0,273). Der Volllauf
+fand deshalb nicht statt. Die Tabelle oben bleibt als bekannte Schwäche von f3 stehen.
+
 Tests:
 
     RIDEBUDDIES_DEBUG=1 .venv/bin/python manage.py test

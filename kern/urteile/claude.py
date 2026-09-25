@@ -33,8 +33,36 @@ koennte ein sprechender Name ('nogo_konflikt') das Urteil faerben.
 Festlegungen (nicht von Fabian entschieden): Modell per
 RIDEBUDDIES_CLAUDE_MODELL, Voreinstellung claude-haiku-4-5 (billig, schnell,
 fuer Einzelurteile genug - ob es fuer deutschen Freitext taugt, klaert der
-Jev-Befund in Schritt 8). max_tokens 1024. Temperatur bleibt beim Standard:
-Wir wollen Claudes Einschaetzung, keine kuenstlich geschaerfte.
+Jev-Befund in Schritt 8). max_tokens 1024.
+
+TEMPERATUR 0 (geaendert 24./25.09.2026, TASK-120.13; vorher Standard mit der
+Begruendung "wir wollen Claudes Einschaetzung, keine kuenstlich geschaerfte").
+Festlegung (nicht von Fabian entschieden), Anlass: Das Matching speichert
+Urteile und spielt sie aus einer Aufzeichnung ab. Ein zweiter Lauf mit
+derselben Frage soll dieselbe Zahl liefern, sonst ist ein Unterschied zwischen
+zwei Fragefassungen nicht vom Wuerfeln zu trennen. Die Zahl ist ohnehin eine
+SELBST BERICHTETE Wahrscheinlichkeit, keine Stichprobe - die Temperatur macht
+sie nicht "ehrlicher", nur schwankender. Voll deterministisch ist auch 0 bei
+Anthropic nicht zugesichert.
+
+NICHT UEBERNOMMEN aus der Anthropic-Doku (gelesen 24.09.2026, TASK-120.13):
+- `strict: true` am Werkzeug: siehe STRICT unten.
+- Prompt Caching: Der Mindestpraefix fuer Haiku 4.5 sind 4096 Tokens; eine
+  ganze Anfrage hier hat rund 1000-2000. Ein cache_control wuerde nur
+  scheinbar wirken (messbar waere es an usage.cache_read_input_tokens = 0).
+- Batch-API (50 % billiger, asynchron): bei wenigen Dutzend bis gut hundert
+  Anfragen je Lauf lohnt der zweite Weg nicht.
+- Offizielles SDK statt urllib: bewusst nicht (Schritt 7, netz.py: keine neue
+  Abhaengigkeit). Offener Punkt, kein Umbau.
+
+STRICT: Nicht gesetzt. Live geprueft am 25.09.2026 mit einem festen
+Beispieltext (keine Personendaten): `strict: true` zusammen mit unserem Schema
+-> HTTP 400 "For 'number' type, properties maximum, minimum are not supported";
+ohne minimum/maximum nimmt die API strict an. Wir behalten minimum/maximum
+(sie sagen dem Modell den Wertebereich) und verzichten auf strict: Der Zwang
+zum Werkzeug (tool_choice) haelt schon heute, und was trotzdem aus dem Bereich
+faellt, faengt formen.py ab (AnbieterFehler 'antwortformat' bzw. Normieren).
+In TASK-120.11 und im Mitschnitt fuer Schritt 8 gab es keinen Formatfehler.
 """
 import json
 
@@ -49,6 +77,7 @@ URL = 'https://api.anthropic.com/v1/messages'
 API_VERSION = '2023-06-01'
 WERKZEUG = 'urteil_abgeben'
 MAX_TOKENS = 1024
+TEMPERATUR = 0
 
 
 def _wiederholen(status):
@@ -124,6 +153,7 @@ class ClaudeAnbieter(Anbieter):
         return {
             'model': self.modell,
             'max_tokens': MAX_TOKENS,
+            'temperature': TEMPERATUR,
             'system': SYSTEM,
             'messages': [{'role': 'user', 'content': text}],
             'tools': [{'name': WERKZEUG,

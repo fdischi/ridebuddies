@@ -1194,3 +1194,103 @@ class Einwilligung(models.Model):
     @property
     def aktiv(self):
         return self.widerrufen_am is None
+
+
+# ---------------------------------------------------------------------------
+# Matching: gespeicherte KI-Urteile je Personenpaar (Schritt 8)
+# ---------------------------------------------------------------------------
+
+class PaarUrteil(models.Model):
+    """Ein gespeichertes KI-Urteil ueber ein GERICHTETES Personenpaar und eine
+    Dimension - Karte TASK-120.13 (Schritt 8, 24.09.2026).
+
+    Heute gibt es genau eine KI-Dimension: den No-Go-Konflikt (Dimension.NOGO).
+    `urheber` ist der, dessen No-Go-Freitext der Massstab ist; `gegenueber` der,
+    dessen Profil daran gemessen wird. Beide Richtungen eines Paars sind zwei
+    Datensaetze (Lesart 7 des Pruefblatts: No-Gos gelten beidseitig).
+
+    WARUM GESPEICHERT (Fabian, 24.09.2026): "Gewichtsaenderung oder
+    hart/weich-Umschalten aendert das Ranking OHNE neuen Anbieteraufruf." Das
+    Ranking liest nur diese Tabelle; gefragt wird nur, wer fehlt.
+
+    SCHLUESSEL STATT KLARTEXT: `schluessel` ist der SHA-256 ueber Zustand und
+    Frage (kern.urteile.formen.frage_schluessel), also ueber No-Go-Text,
+    Profilwerte UND die Fragefassung. Aendert sich eines davon, passt der
+    gespeicherte Schluessel nicht mehr, und das Urteil gilt als veraltet - es
+    wird neu geholt statt still weiterverwendet. Den Zustand selbst legen wir
+    NICHT ab: No-Go und Profil stehen schon im Profil, ein zweites Exemplar
+    wuerde nur beim Loeschen oder Aendern vergessen. Festlegung (nicht von
+    Fabian entschieden): ein Datensatz je (urheber, gegenueber, dimension);
+    ein veraltetes Urteil wird ueberschrieben, nicht daneben aufbewahrt, und
+    der Anbieter gehoert nicht zum Schluessel - wer den Anbieter wechselt,
+    holt mit `manage.py matching_urteile --neu` neu (README, "Matching").
+
+    Nie fuer Nutzer sichtbar - weder der Wert noch dass es ein Urteil gibt.
+    Mit dem Nutzer geloescht (CASCADE).
+    """
+    urheber = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                related_name='+', help_text='dessen Maßstab (No-Go)')
+    gegenueber = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                   related_name='+', help_text='dessen Profil daran gemessen wird')
+    dimension = models.CharField(max_length=24, choices=Dimension.choices)
+    schluessel = models.CharField(max_length=64, help_text='SHA-256 über Zustand und Frage')
+    anbieter = models.CharField(max_length=16)
+    modell = models.CharField(max_length=80)
+    wert = models.FloatField(help_text='Noul: Wahrscheinlichkeit für „ja“ (Konflikt)')
+    vertrauen = models.FloatField()
+    tokens_ein = models.PositiveIntegerField(default=0)
+    tokens_aus = models.PositiveIntegerField(default=0)
+    dauer_ms = models.PositiveIntegerField(default=0)
+    geholt = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Paar-Urteil'
+        verbose_name_plural = 'Paar-Urteile'
+        constraints = [
+            models.UniqueConstraint(fields=['urheber', 'gegenueber', 'dimension'],
+                                    name='paarurteil_einmal_je_richtung_und_dimension'),
+            models.CheckConstraint(condition=~Q(urheber=F('gegenueber')),
+                                   name='paarurteil_nicht_ueber_sich_selbst'),
+        ]
+
+    def __str__(self):
+        return f'{self.get_dimension_display()}: {self.urheber} → {self.gegenueber}'
+
+
+class MerkmalUrteil(models.Model):
+    """Ein gespeichertes KI-Urteil ueber EINE Person: Verstoesst eine bestimmte
+    Auspraegung eines Verhaltensmerkmals beim Gegenueber (z. B. Alkohol auf
+    Tour "egal") schon fuer sich gegen das No-Go dieser Person? - Karte
+    TASK-120.13 (Schritt 8, 25.09.2026).
+
+    Das ist die "Regel", die kern/matching/nogo.py einmal je Person aus dem
+    No-Go-Freitext gewinnt; den Abgleich mit jedem Gegenueber rechnet danach
+    der Code. Warum es sie neben PaarUrteil gibt, steht dort im Modulkopf.
+    Schluessel, Veralten und Sichtbarkeit wie bei PaarUrteil: nur Hash und
+    Zahlen, veraltet bei geaendertem No-Go, Profil oder Frage, nie fuer
+    Nutzer sichtbar, mit dem Nutzer geloescht.
+    """
+    nutzer = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                               related_name='+', help_text='dessen No-Go')
+    dimension = models.CharField(max_length=24, choices=Dimension.choices)
+    merkmal = models.CharField(max_length=32, help_text='Profilfeld, z. B. tempo')
+    auspraegung = models.CharField(max_length=32, help_text='Wert beim Gegenüber')
+    schluessel = models.CharField(max_length=64, help_text='SHA-256 über Zustand und Frage')
+    anbieter = models.CharField(max_length=16)
+    modell = models.CharField(max_length=80)
+    wert = models.FloatField(help_text='Wahrscheinlichkeit für „verstößt“')
+    vertrauen = models.FloatField()
+    tokens_ein = models.PositiveIntegerField(default=0)
+    tokens_aus = models.PositiveIntegerField(default=0)
+    geholt = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Merkmal-Urteil'
+        verbose_name_plural = 'Merkmal-Urteile'
+        constraints = [
+            models.UniqueConstraint(fields=['nutzer', 'dimension', 'merkmal', 'auspraegung'],
+                                    name='merkmalurteil_einmal_je_auspraegung'),
+        ]
+
+    def __str__(self):
+        return f'{self.get_dimension_display()} von {self.nutzer}: {self.merkmal}={self.auspraegung}'

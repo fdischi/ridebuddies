@@ -22,10 +22,12 @@ from .models import (
     CrewVorschlag,
     Einwilligung,
     Feedback,
+    MerkmalUrteil,
     Fremdprofil,
     Mitgliedschaft,
     Nachricht,
     Nutzer,
+    PaarUrteil,
     Profil,
     RidebuddyAnfrage,
     Teilnahme,
@@ -191,3 +193,18 @@ class FeedbackAdmin(admin.ModelAdmin):
 class EinwilligungAdmin(admin.ModelAdmin):
     list_display = ('nutzer', 'art', 'version', 'erteilt_am', 'widerrufen_am')
     list_filter = ('art',)
+
+
+@admin.register(PaarUrteil)
+class PaarUrteilAdmin(admin.ModelAdmin):
+    # Gespeicherte KI-Urteile des Matchings (Schritt 8). Nur Zahlen und ein
+    # Hash - der Zustand, aus dem sie entstanden, steht nicht hier.
+    list_display = ('dimension', 'urheber', 'gegenueber', 'wert', 'anbieter', 'modell', 'geholt')
+    list_filter = ('dimension', 'anbieter')
+
+
+@admin.register(MerkmalUrteil)
+class MerkmalUrteilAdmin(admin.ModelAdmin):
+    # No-Go-Regeln je Person (Schritt 8): nur Zahlen und ein Hash.
+    list_display = ('nutzer', 'merkmal', 'auspraegung', 'wert', 'anbieter', 'geholt')
+    list_filter = ('merkmal', 'anbieter')

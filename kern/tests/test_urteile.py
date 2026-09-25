@@ -751,6 +751,9 @@ class ClaudeTests(SimpleTestCase):
         k = falsch.koerper()
         self.assertEqual(k['model'], 'claude-haiku-4-5')
         self.assertEqual(k['tool_choice'], {'type': 'tool', 'name': 'urteil_abgeben'})
+        # Temperatur 0 und kein strict (claude.py, Modulkopf; TASK-120.13).
+        self.assertEqual(k['temperature'], 0)
+        self.assertNotIn('strict', k['tools'][0])
         schema = k['tools'][0]['input_schema']
         self.assertEqual(schema['required'], ['f1', 'f2', 'f3'])
         self.assertEqual(schema['properties']['f2']['required'], ['billing', 'technical', 'sales'])

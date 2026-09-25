@@ -308,12 +308,22 @@ Diese Beiträge sind dafür angelegt (Text in `kern/dummies.py`, `BEITRAEGE`):
 | dummy-schotter-mehmet | öffentlich | Bier oder Radler zur Mittagspause | bestätigt den No-Go-Konflikt mit Nina aus dem Freitext, nicht nur aus dem Feld |
 | dummy-schotter-sven | öffentlich | „abends gern ein Bier am Zelt“ | dasselbe für Sven gegen Nina |
 | dummy-ring-kevin | öffentlich | „auf der Landstraße fahre ich nach Schild“ | entschärft Marcos No-Go „Heizen auf der Landstraße“ – Kevin bleibt oben |
-| dummy-ohne-angabe-robin | öffentlich | „mir geht es ums Fahren“ – kein Merkmal, aber ein Prüffall | **darf nicht wirken:** Robin hat keine Einwilligung zur KI-Auswertung (`Einwilligung` nur „18+“) |
+| dummy-ohne-angabe-robin | öffentlich | „mir geht es ums Fahren“ – kein Merkmal, aber ein Prüffall | ~~**darf nicht wirken:** Robin hat keine Einwilligung zur KI-Auswertung (`Einwilligung` nur „18+“)~~ – *überholt 24.09.2026* (Fabian, TASK-120.13): „Wer keine KI-Einwilligung gibt, darf sich später gar nicht anmelden; das System basiert auf der KI-Auswertung. Gib jetzt allen Testdaten und meinem Account die Einwilligung zum Testen.“ Robin hat seitdem die Einwilligung wie alle Dummies; sein Beitrag ist ein gewöhnlicher Beitrag ohne Merkmal. |
+
+Einen Prüffall „Beitrag ohne Einwilligung“ gibt es damit nicht mehr: Ohne
+KI-Einwilligung kommt niemand ins Matching (`kern/matching/ranking.py`,
+Grundmenge), und die Datensperre in `kern/urteile/sperre.py` prüft die
+Einwilligung weiterhin bei jedem Urteil.
 
 Weitere Beiträge auf Stufe verbunden oder Ridebuddies (Anja, Yvonne, Nina, Gabi,
-Heinz) tragen persönliche Angaben. Ob das Matching Beiträge jeder Stufe lesen
+Heinz) tragen persönliche Angaben. ~~Ob das Matching Beiträge jeder Stufe lesen
 darf oder nur öffentliche, ist offen – die Notiz sagt „Rohmaterial fürs Matching
-(mit Einwilligung)“, nicht welche Stufe.
+(mit Einwilligung)“, nicht welche Stufe.~~ – *entschieden 23.09.2026* (Fabian,
+TASK-120.07, Entscheidung 3): „Das Matching darf Beiträge ALLER Stufen lesen (mit
+KI-Einwilligung). Eine Vorschlagsbegründung nennt aber nie Inhalt eines Beitrags
+gegenüber jemandem, der ihn nach der Sichtbarkeitsregel nicht sehen darf – mit
+Test.“ Schritt 8 liest noch keine Beiträge (`kern/matching/nogo.py`, Modulkopf);
+das kommt mit Schritt 9.
 
 ## Terminfälle für Schritt 6
 

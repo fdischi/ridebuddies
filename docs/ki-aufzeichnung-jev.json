@@ -1,0 +1,5763 @@
+{
+ "version": 1,
+ "hinweis": "Aufzeichnung von KI-Urteilen fuer kern.urteile (TASK-120.12). Schluessel = SHA-256 ueber Zustand und Frage (formen.frage_schluessel). Kein Zustand, keine Anweisung, keine Stufen- oder Optionsbeschreibung, kein API-Schluessel; Optionsnamen einer Auswahl stehen als Schluessel der Verteilung drin.",
+ "eintraege": {
+  "00d43693364f82978ab88654589b2348cba36b8224b57b8150b313d780b2c74e": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.81,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.09,
+     "1": 0.8,
+     "2": 0.08,
+     "3": 0.02,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1043,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "0227f453e72914ae39c10d5369b28ebcfd16f5c9628279ed55fbeaf19183e528": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0271acea40c38ed0a38c425926af654d34a34569f9fafadff36c100e259dad07": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1755,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "02ac7e233b6b9fe49ef08962b46abcfeb47e552cf5f4d308eb15449c87d3fd85": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.95,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1025,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "033424fb1e2ed7096aa27be043f541661f562cc22e7192f2acd1b6f65954d3f9": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1778,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "0390118cf6db20c113f9162c485d6ccb53e7c60a5c9406a752be97ae9dd012d0": {
+   "urteil": {
+    "wert": 1.03,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.97,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1044,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "0447488d16220982075102de5b275a9f7b2c87658f445909a95512e8baec6246": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0468e9a8a093ab8b128fe5a151bd9d9ec964f668a879dac60de3fe47619e9d02": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "04b211cb431d518119ad49a437152c66f6b1b348aa885a7a087b6d8b4b04bc31": {
+   "urteil": {
+    "wert": 0.7,
+    "vertrauen": 0.3999999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.7,
+     "nein": 0.30000000000000004
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1784,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "04d0afa87a218ff795b6423dcd39e01e50a970f32e1aa82ddf169c55df809bb0": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1778,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "05a22667aaee6fdb46a180619783b72f986ceaaa3c3642acc1f80f14b37b704e": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "061128a81c3101c0f3a9783efe52ba419d9b4d527beeb601a861575f7d3b6f8b": {
+   "urteil": {
+    "wert": 3.44,
+    "vertrauen": 0.54,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.09,
+     "2": 0.02,
+     "3": 0.1,
+     "4": 0.75
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1031,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "06cf4b9ebc3afe683f5f407fec678a381b605c0e45f0a647cbaefd88c085e99e": {
+   "urteil": {
+    "wert": 0.15,
+    "vertrauen": 0.7,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.15,
+     "nein": 0.85
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "07accb6d636369e360cb1f811d790dc2deabfd7fa41c074e9bc59c4c2227c434": {
+   "urteil": {
+    "wert": 3.3,
+    "vertrauen": 0.42,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.11,
+     "2": 0.03,
+     "3": 0.18,
+     "4": 0.65
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1038,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "09083c0164aa1bd0b048107393044c60ca3a350b8c360e15a71133e14677f8b9": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "09601ee19376e9102bc968e1564d4e1eed9d3280922ce793ce923e7ad8d804f0": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1774,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "0b5ce6ad65777c93a956cf5c5f7602309d4fc5dd6c7b01713caaa42f19a6b67c": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0cfe6fb66362579149aade900fdb3ae38a0678c5f387da7b00522b9e4ca7bfa4": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0dae71e10c01af377c78cce2feabdc1a501e5a28db71ac72c3f102d48c14c13a": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0dd039282146fd4b4ce1af21a5b40fc8e2705dece86936834fc042dcfbc8a465": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0dd972da1cb93503c9c425a1eb1794ccc8dc34726b3784977ca03bc77643a8ee": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "0e49369b2291efbafab0676e47ae6f0b73c4a6187c7a7fe915a2c8504791157c": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1746,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "0e64e84d86d7cc8a15715f2ff04a28523daa0bf748d573f4f3445f097f78f2be": {
+   "urteil": {
+    "wert": 0.91,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.14,
+     "1": 0.82,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 980,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "0fda9064f28f57f50c45e8737a91f359cc35eadfeb0e8626cdb5a1a78f756263": {
+   "urteil": {
+    "wert": 2.34,
+    "vertrauen": 0.17,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.27,
+     "2": 0.17,
+     "3": 0.36,
+     "4": 0.16
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 993,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "1016c70c8a15b3eea7d872235a0ed95085dfb3ed71a6ddb128e6e1145e3c21b9": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1009,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "110982928614fddc702876b6da7f0f718a8a19784b086e3ae7590b64b92a2150": {
+   "urteil": {
+    "wert": 0.53,
+    "vertrauen": 0.06000000000000005,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.53,
+     "nein": 0.47
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1760,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "12769b0ad32900c2b926b5c278e9998b1a1ad59887da5463c8910199f610b359": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "12ef2e8d505187f3204e8ea9481b0a8dd0fa1e2acb0cccbe838117884cdcfeb7": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "12f4887cca49f6ea69d6b6cc7dae7679fef93bec70e73e483b5cd275a7551752": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "135b54704fc5e423c4cfe9d2bcb670b3d1e4ecb490cf11f59a5fe130337e3fe1": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "135d05cf5809ea4b94e155a61f92d58a47a8899ed785f9a177836d8629f39d6b": {
+   "urteil": {
+    "wert": 2.4,
+    "vertrauen": 0.38,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.22,
+     "2": 0.16,
+     "3": 0.53,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1057,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "13c534629663ea87ad4117b8c7b2e8712bfd85a3b09ab667d230d47c42545aee": {
+   "urteil": {
+    "wert": 1.11,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.89,
+     "2": 0.07,
+     "3": 0.03,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1040,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "1497c7e8825addca1675384a770aaf13f0ce5e5cb88231ac7ce2f2cfebb393b1": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1775,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "1555edb4555d7133fdec1c9d0024f88acc5d801209056b336e640d945da81791": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "15a0e7a19c85a18207d3610aeeff683f5aa713be44594d95928233d176d04b59": {
+   "urteil": {
+    "wert": 1.35,
+    "vertrauen": 0.69,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.74,
+     "2": 0.12,
+     "3": 0.12,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1061,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "15e9fb4d5acbf0e298f85e7980f76b80aa61b0a0d53a31444a81f2bef769dd28": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "16178770d4160c060abc09492e00c32f5d1445fe8f01ec98dec570e3a6037727": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "16227754842e48eda6cc2d7e14fb9ccb67c755b34486b00b644e3bfadb05c2ee": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "1825cca716ae47a06ce97246bc080534a22ddf5fc40a9c3442f8f2d742db42ac": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "185528ecd9fe00e3dc505e12401e949ad7d56daee1ed5ae078ddb14cab0187a6": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "18ef7a942cc9750a68464eb04b3a4c0f19d9c97fee74c98fa9b8df7182d0a02d": {
+   "urteil": {
+    "wert": 1.0,
+    "vertrauen": 0.44,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.33,
+     "1": 0.48,
+     "2": 0.09,
+     "3": 0.06,
+     "4": 0.04
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1032,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "194116803798f6521939e951d263945506f2d198c72243bb83d46d178770bd9b": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1746,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "1a215e5941bf853e7b255257ab1023831611c0c4db298b437692b89481a7383a": {
+   "urteil": {
+    "wert": 1.92,
+    "vertrauen": 0.15,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.05,
+     "1": 0.39,
+     "2": 0.22,
+     "3": 0.26,
+     "4": 0.08
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1013,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "1a619d99cb81f6de693b0c3a0eca6331082666eaf94b14a79ad8f17b8b7e6752": {
+   "urteil": {
+    "wert": 0.99,
+    "vertrauen": 0.93,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.93,
+     "2": 0.03,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1052,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "1aac3412a61e2bbb0ff15f5f0d35f2c9be3f82c34f63c2cf82818f5cb68689a8": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "1bddfff0b1d773a8da6b815b2437a95cfaaa055ea3f5a408f931c2b7d0e01749": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "1c7395544c29a1df4b8a486b650714d62c67d1ea4a8860e8a959a03e12c3bafa": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1765,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "1ce736e5290d1bf306fb74bce4699f6b425b239b270bc4b6088192e318ea14cb": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "1f1eecb0a0689567966ed6c46e44e0e935467305581547ccf5ec2552e9236d43": {
+   "urteil": {
+    "wert": 1.07,
+    "vertrauen": 0.93,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.9299999999999999,
+     "2": 0.05,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1061,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "1f52af42e29500a92a63739fe28927cac00d481faaefdd66d4d8cdb0ec4c923f": {
+   "urteil": {
+    "wert": 0.3,
+    "vertrauen": 0.4,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.3,
+     "nein": 0.7
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "1fb34357326acdfef936c3e5ad38b72685c5280152ccf6c4d84c90d680c3ca24": {
+   "urteil": {
+    "wert": 1.3,
+    "vertrauen": 0.3,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.27,
+     "1": 0.41,
+     "2": 0.14,
+     "3": 0.11,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1062,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "205f43d67db8cf91a04a618ec2cb35447591e46b1eddba0b4edaa2cf2579f928": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "20dccb2f6a8447e98032f9bda4d053f529764d05bf7707e48560084a6d758dd6": {
+   "urteil": {
+    "wert": 1.1,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.9,
+     "2": 0.06,
+     "3": 0.03,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1056,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2142cd80d252bdfa73f5d318ddb913528ba09970a10629d0253bc044297b0be1": {
+   "urteil": {
+    "wert": 1.1,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.91,
+     "2": 0.06,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1003,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "22f04253fbd0da4dd8e29061387f063246b5adc3b0471705ad6872756dd4b779": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1760,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "232a11137ccb27a50ed7e3a9a61128ee08c3e40fd22385d3ccc2c641e99afa53": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1029,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2345ed0771865efa2c88ae704f06ac4272e6fbb89352d169ba01a0bc774f6eae": {
+   "urteil": {
+    "wert": 1.32,
+    "vertrauen": 0.0,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.34,
+     "1": 0.29,
+     "2": 0.15,
+     "3": 0.14,
+     "4": 0.08
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1058,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "23a400bab873479590152e3f7dbd31cfa08c65fe17a2be05c240812f36f5fd79": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "23d5b8210c64baee1a84073fd2076aab056253acee9ba0989088278fd728ce8f": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "2504d920ef4d96a36352361ac0c92b519abc4d9d2f6945b6a6f6b44ac0e4918a": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1779,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "26140777f07baeecd3542a9a72803e3dc98344a413c5ad2458196eda04f162c1": {
+   "urteil": {
+    "wert": 0.9,
+    "vertrauen": 0.75,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.2,
+     "1": 0.73,
+     "2": 0.06,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1024,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2667b0ded6286418ff6c9e8c516f16c997cd756a329f923cf6944d7ea1185d4c": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "268b312d1db52a4bfc4c2a5c1aaa066e28d455a93345801b5119233ae539c31c": {
+   "urteil": {
+    "wert": 0.13,
+    "vertrauen": 0.74,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.13,
+     "nein": 0.87
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "289b29c6b5e34a3feb39ca19e21ab278fb4f29d6dce1ed696f346fc39642f45a": {
+   "urteil": {
+    "wert": 1.15,
+    "vertrauen": 0.28,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.36,
+     "1": 0.35,
+     "2": 0.12,
+     "3": 0.11,
+     "4": 0.06
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1045,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "28f71af9ebcd9ee80e20b7488614f819a0c1bb781b8601476993b0846544def1": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "28f7481d6a5afa4aac636a3b070156f2f49ff96760de699fc82004ed15a97f6a": {
+   "urteil": {
+    "wert": 0.14,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.87,
+     "1": 0.12,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 994,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2963d78cda882c0eaba2784af6a7b74b92cf322f533043fc6f34b33f4cfc3340": {
+   "urteil": {
+    "wert": 3.11,
+    "vertrauen": 0.26,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.06,
+     "1": 0.12,
+     "2": 0.04,
+     "3": 0.22,
+     "4": 0.56
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1041,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2a537fdc4df7ccb8c380d0613fdff801cbc6acf8c47397b1fd1689feb35b9f19": {
+   "urteil": {
+    "wert": 0.1,
+    "vertrauen": 0.8,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.1,
+     "nein": 0.9
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "2b6d2c5fa51e284bc6a56407c8168fa71345e56738f648c41960f195037307ca": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1016,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2be3e3cb2065b3805328553a63b93df91d4fefbc50b0eaf17bb6a1f3b7040c6f": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1779,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "2be6647ec036a65d03f7faac57694fbb6172dd7308f9803f2ccfc9ca10c6cf25": {
+   "urteil": {
+    "wert": 1.08,
+    "vertrauen": 0.87,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.88,
+     "2": 0.07,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1049,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2d6c574143771b904a4e11f17c66751144b3c5c87ee510cc6b34895535255505": {
+   "urteil": {
+    "wert": 1.1,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.89,
+     "2": 0.06,
+     "3": 0.03,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1053,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2ed694aab540347f1e67df8609f0d82309ee784db5ef4ce01bf2f9e50e4cc8f1": {
+   "urteil": {
+    "wert": 1.03,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.96,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1014,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "2ef2e95e7091a3c9b643b3567a0049f82692ae51aa817fdd021f0e1b5eb7225a": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "2f868a641718abde17abb87a3ea4b0d83bf3921cc5d4206cdfd2a4a987b6184b": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "2f8838cae170f8a262cd40587569ba1f0c19ecbf71eb66a28882a081bb7be268": {
+   "urteil": {
+    "wert": 0.65,
+    "vertrauen": 0.63,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.39,
+     "1": 0.58,
+     "2": 0.01,
+     "3": 0.01,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1041,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "32af13a3f989990ab140d355ef5150198c890f89744a2f907ccff708d28a3ae0": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1786,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "3328cd1a174c4ec6d22789250e961844bad8230c8fb228f15545a5f3a1396ff1": {
+   "urteil": {
+    "wert": 1.38,
+    "vertrauen": 0.62,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.67,
+     "2": 0.17,
+     "3": 0.11,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1052,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "3467c7926f11adb5dd2a89eb9603c838e75592a13594d9e5ede3a23275a1b606": {
+   "urteil": {
+    "wert": 0.13,
+    "vertrauen": 0.74,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.13,
+     "nein": 0.87
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1760,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "34ca420fc4b471de40080b251b98c0fb6ada31faa0f74ecea86944a8fb2ad318": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1774,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "34dca87352eaf7824be97cef79ca9cb0351120e924c61c5c7e7b5a4f977d4254": {
+   "urteil": {
+    "wert": 2.76,
+    "vertrauen": 0.31,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.19,
+     "2": 0.08,
+     "3": 0.41,
+     "4": 0.3
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1034,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "352391e033d50b8fc862b777a3a584b6f05e086fc7d9b7873b1eedf484f50d3b": {
+   "urteil": {
+    "wert": 1.45,
+    "vertrauen": 0.0,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.33,
+     "1": 0.28,
+     "2": 0.12,
+     "3": 0.17,
+     "4": 0.1
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1057,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "352e7334ca11d3db8f6a4efbd6a88a3a78d00b924dac31fd2fb2290871413f7f": {
+   "urteil": {
+    "wert": 0.1,
+    "vertrauen": 0.8,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.1,
+     "nein": 0.9
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1779,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "3546bda9bc885d034234db1cfffe7ad98e32eea3b00b0ce601f795f469c4c037": {
+   "urteil": {
+    "wert": 1.53,
+    "vertrauen": 0.53,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.63,
+     "2": 0.19,
+     "3": 0.17,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1043,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "35538d5bec62fcae5ca8b643fe5969b2371816eb81384c8f32f1511235f02dc6": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1779,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "3622b10697028566311ee1d998366f199a357782e6978a9b710958acc1fed4c2": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "393cfc24455f3913f51d2d39518a30bdb101f7cd96c3df606051842ea9cb1752": {
+   "urteil": {
+    "wert": 0.15,
+    "vertrauen": 0.7,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.15,
+     "nein": 0.85
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "3997149030e8ddb6a7fa3abe48e47db63b204c5ee024840d610ba2af4dde4f2d": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "3a1a03d38fc7a2d8b06dfcff7c781a2290a03695b8da44874ba99e3fcee3c85f": {
+   "urteil": {
+    "wert": 0.16,
+    "vertrauen": 0.6799999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.16,
+     "nein": 0.84
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "3ce787828ec6e946aeaefe7fc165c464f7aa74a17bfbec55f1f1f145d0895af5": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.98,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1033,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "3d2b7eeb612da020779c63b3b9522f347adb817cd0aaf5ec60e98b726c001d44": {
+   "urteil": {
+    "wert": 0.66,
+    "vertrauen": 0.45,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.54,
+     "1": 0.31,
+     "2": 0.09,
+     "3": 0.05,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1023,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "40202967c460c82314d23ff29a0e13893149e7926161827b75792840e961972d": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "40cffc6b6175ed79187f0c08397e87e58a4445382b464e63d116dc8f444a9ff8": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "42976fe41f44c1a845e670259ea9704f0d71733522ecc689918ff400bb41e46a": {
+   "urteil": {
+    "wert": 1.37,
+    "vertrauen": 0.67,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.72,
+     "2": 0.16,
+     "3": 0.11,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1032,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "42d3acc8827cf46c63721daf40e09f3785a99afdc8b1a005436c491920cc6a64": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1755,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "43822c806c5984084d1e237afc0d3ea4e99564f0036d08a839a079bf450e5512": {
+   "urteil": {
+    "wert": 2.38,
+    "vertrauen": 0.34,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.15,
+     "2": 0.35,
+     "3": 0.4,
+     "4": 0.08
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1059,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "43cb6d836abda6de1236b4658b41ab03eed826d6137694bd7e344d6358e56fbe": {
+   "urteil": {
+    "wert": 1.36,
+    "vertrauen": 0.66,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.71,
+     "2": 0.15,
+     "3": 0.11,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1059,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "443ddf5d48f52a80360b8fc94ed1a0460633470e66fc5f7a8b578a6e0af296e9": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1774,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "448bea89acbf30f9c0d272488a0d92de11c97ab0602fc374f3c307d68ca5c086": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1027,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "44a7efa9a2c08820f33d58abe74078d2ded3704a639e7eeb90e637f365339d19": {
+   "urteil": {
+    "wert": 1.12,
+    "vertrauen": 0.89,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.91,
+     "2": 0.06,
+     "3": 0.03,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1054,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "44d751aae8330c7815555cfbe68f56db053df2196ae8fd553d9f1babff22a4c3": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "468697ee7df2bbed79c27ce6e2f6a7365ee9e56a44156743ab4b04f26bc07a2c": {
+   "urteil": {
+    "wert": 0.16,
+    "vertrauen": 0.6799999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.16,
+     "nein": 0.84
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "4787cdc0b35e6b3b08653897e62ae1715d22ce8fc2940d478d09397754d1adfb": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1774,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "48ad9e76c790f4a5c82184e6aa8876c4c8d13b01c4520313c8ae612ccb6f4f90": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "4a1f93a568ca43ffb18d91392d5afa49c575e38643b19e625f2521bc9270f9a4": {
+   "urteil": {
+    "wert": 0.19,
+    "vertrauen": 0.62,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.19,
+     "nein": 0.81
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "4b7eb23e7346a6159e0bceb93b911f73863a4a5e2a0175b719a64e8da2ad9e07": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "4c9061d650c5b80d976e7ce220f422c8fbba9c0e4a0ebaebe611cdc71e77c17d": {
+   "urteil": {
+    "wert": 0.61,
+    "vertrauen": 0.57,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.45,
+     "1": 0.51,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1054,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "4de98759a8452c7eb779f9902cf08db389df13d5776aca027ee50bac035d3c48": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1760,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "4dfd7a1cb52f8133f6136c728f021d8796351f59d1ce0fe1e9536b202d589ca7": {
+   "urteil": {
+    "wert": 3.28,
+    "vertrauen": 0.4,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.13,
+     "2": 0.02,
+     "3": 0.12,
+     "4": 0.69
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1048,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "4e2996949de3f3761ef831f87d44cf48dfc976b60ce59ac9ad2757c051802e4b": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1755,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "51afd0a73261fcf9dbe67fdccc1436d5242d3b6abe2d1ece3d575a8147a853d7": {
+   "urteil": {
+    "wert": 0.1,
+    "vertrauen": 0.8,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.1,
+     "nein": 0.9
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5382875afbe6bc6acb62d888422075cd819cd975a7363c0f7575ece53803fe09": {
+   "urteil": {
+    "wert": 0.41,
+    "vertrauen": 0.66,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.62,
+     "1": 0.37,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1037,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "542739f7790cda6524913c1a2bf69e7f0b5ee6da18f88fa7834352faaae257ab": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5472c795e53bb591f5d5a36bd09cceb103e9ce78db943d0ac9cd15f5bd9427ef": {
+   "urteil": {
+    "wert": 1.09,
+    "vertrauen": 0.91,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.92,
+     "2": 0.05,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1022,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "550eeb950f9cacd6cce788413c4ceba1219abb21d66cd92a5125d52d79d158d2": {
+   "urteil": {
+    "wert": 0.15,
+    "vertrauen": 0.7,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.15,
+     "nein": 0.85
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5587ed002ba3f91ef2a74b09269990068e0090424c0d8ef63597185dc18638a1": {
+   "urteil": {
+    "wert": 0.19,
+    "vertrauen": 0.62,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.19,
+     "nein": 0.81
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5591baa166f16843168da7337336034ad6631bb11a2f33e28a902b77de38ecd9": {
+   "urteil": {
+    "wert": 0.41,
+    "vertrauen": 0.18000000000000005,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.41,
+     "nein": 0.5900000000000001
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1784,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "568fe2986b10aac10723b9c1b4b8c3334b554608563118288847ec079af3e0d2": {
+   "urteil": {
+    "wert": 1.5,
+    "vertrauen": 0.57,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.65,
+     "2": 0.17,
+     "3": 0.16,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1041,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "56a788ef7af661a9efbdbcc833f29853583e9466f6803d74f5ed8451fe4cd493": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1746,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "571849359b2527abeb5bf69cd97adb573d85bf23e8306d247cf27a8b4f4af8ed": {
+   "urteil": {
+    "wert": 1.08,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.93,
+     "2": 0.04,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1027,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "57577b5cfb599cbbf45e3fcb437bbe20e954c3f75a348487e8fe0a887e03f515": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1765,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "58a34f73f5bc0699541d8070696882d14f765679e560b5c840c107673271960a": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.97,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 989,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "58b14bdf4513b588b6f5e688916f41199b1f0b9169e93939f273a89b1419ebc6": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5a0b29c17104a42fdaf898e9681089fc8af83a318ab8e1e9df3bffacbdff18cc": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.96,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1021,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "5ab778568f368d3cf2b1b1a0c89ff58a453692867ed1dc49315c0f862022c1a1": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.95,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1039,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "5ae1f582ba8fe9c635602dec5a2d561ce073b529b12f715933fc2e22b76ee622": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.98,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1028,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "5bec2de5b2e1b3eaa57f2e24958ca4bf861dbc83bbb5d6856624442ed3fc51dc": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5d17534206c6288d69d10d6bd9f4d6ad8cee28d6a86b601b347da0c521e68f83": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1784,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "5e79a5bb1fe8ca5f503a210fe79cc65df2229a71c237939f4c11ea22bd5f239c": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "5e893ae3f21686c0e6d7e68f37770e786599631b00129985e85164bfe0e99ab5": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1784,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "60d33fc10e51660d3a80ee5415eebb24ea62aa4329ae5c645df82e39a1181318": {
+   "urteil": {
+    "wert": 1.0,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.95,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1031,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "612656dbedd341034c9ce44b40fac69328b7707620d97dfd9d7491917dbded3c": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1779,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "619678fed8350949e80e39437088501c741208874b223c0bad6343deb9fac53e": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "628a91e69a27690610f696fbb78d7861e8de691f307c77a478ddb557f43c7d42": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "629493a083536b9f0fbafccef6e4878f14b08f3abb28700790ec77698b2aba4d": {
+   "urteil": {
+    "wert": 0.17,
+    "vertrauen": 0.6599999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.17,
+     "nein": 0.83
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "639524990587b4573a2b695a36ffb6a14fa4a588a6e7204d9d3c4b90addbefa2": {
+   "urteil": {
+    "wert": 1.09,
+    "vertrauen": 0.09,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.42,
+     "1": 0.31,
+     "2": 0.09,
+     "3": 0.11,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1059,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "64865a8c767a64cf3692bb2db4081a70f84e17740254081511f5193a48fe1e5e": {
+   "urteil": {
+    "wert": 1.1,
+    "vertrauen": 0.64,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.17,
+     "1": 0.65,
+     "2": 0.11,
+     "3": 0.05,
+     "4": 0.02
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1013,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "65531ef7765800286c56ba27eda54bb06dc0551c33ae643a5444616a060f06ee": {
+   "urteil": {
+    "wert": 1.07,
+    "vertrauen": 0.93,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.93,
+     "2": 0.04,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1018,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "666f15f7b5b16fe7e5c6e734c4b52dc242675fe2f033b5574b4cea7e2014161e": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1779,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "673a0f0682e19b435496bdc24158799b55a0dedefa900460a302671d694132a7": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.99,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1045,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "67a954400892e323e70b9b9eb95824234ffdc7a738017952aaf3c1b83ee14f31": {
+   "urteil": {
+    "wert": 1.08,
+    "vertrauen": 0.93,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1027,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "6857a42c00ea78467c41bcf17909e2f4c18af542dc8a82acf56129635c8fad2a": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.96,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1042,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "696fffaa0eaa8d7184511cda0418180e70982f7cd7223da5b4ec2cd08e63aa15": {
+   "urteil": {
+    "wert": 1.03,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.98,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1030,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "699523dcfa91bce5eb2d196a6c5bd6cb5c5bc7d97e5cae42746d2e4f7657a71b": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "6b37eaa1255a6e78884d7fb54929f2257cf8fcd9165292ea4157309a3b3034fd": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1765,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "6b4f163121e85145ae3db15b253716fae46ed578b87bdf10c7deda5d116472ec": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.98,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1025,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "6e3330bf6347535ece21fbd197161c695db12acf39a49a1dbcc8af1208f3e237": {
+   "urteil": {
+    "wert": 1.4,
+    "vertrauen": 0.63,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.68,
+     "2": 0.18,
+     "3": 0.11,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1060,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "6e5e9e06ccdec291de5a0ac9b7639ddcee148d4dc4194ceab5e847aeaab70258": {
+   "urteil": {
+    "wert": 0.97,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.07,
+     "1": 0.9,
+     "2": 0.03,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1047,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "6ed6d5b629f1c7bed6ffaea739d56624ffa426bc5facd080c1b16a87869783b4": {
+   "urteil": {
+    "wert": 0.99,
+    "vertrauen": 0.89,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.07,
+     "1": 0.88,
+     "2": 0.04,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 994,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "6f322c31dcb0a7d6dd3f8d0aa6640cc4bc778bbe80fd608d68eb356127f46676": {
+   "urteil": {
+    "wert": 1.27,
+    "vertrauen": 0.63,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.09,
+     "1": 0.68,
+     "2": 0.12,
+     "3": 0.1,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1039,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "6ff2ba6d58f7d5776357cd74721ccb1e5461667d006faaf38203d06d44f1f83a": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "705764293f90cf60690b16f61de179acb37fc3c95604af9cb954f35725764338": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "70ce2d7a0c4a486916f8094b4ee3c6e00d737559ffbc6f5f114131ee496595de": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1760,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "7140e30be8d833ecbcaebc65315f19520274b97f153c9d15147222c61038ca20": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "7268dca35609daa5ea78140d35ab4200c3441d0a7f82c8e9df60f0290b155ecd": {
+   "urteil": {
+    "wert": 0.14,
+    "vertrauen": 0.72,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.14,
+     "nein": 0.86
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1775,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "737c804d33649bf23f356de9b64d53c51095793d019583413838dc9b74aa89fc": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.15,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.45,
+     "1": 0.3,
+     "2": 0.1,
+     "3": 0.1,
+     "4": 0.05
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1055,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "73a38b5eb7bd5110fa23184428472fd2f1c817083af14101bfaf3b17e7cdd7f2": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "742eb70b7e1efc9d7b56c6972ddb4f197d40aac399ad6aeb77aea17e2e70ce03": {
+   "urteil": {
+    "wert": 1.12,
+    "vertrauen": 0.87,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.88,
+     "2": 0.06,
+     "3": 0.04,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1048,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "74406a6c166ff1284401651660c4e86ddb43c68464196955f1007d116a533b3a": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.67,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.18,
+     "1": 0.68,
+     "2": 0.08,
+     "3": 0.04,
+     "4": 0.02
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1016,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "74fa0d5bddc93cf0bd43afa5b44421f23cf68658139b85678b844a0186064cd1": {
+   "urteil": {
+    "wert": 0.16,
+    "vertrauen": 0.6799999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.16,
+     "nein": 0.84
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "75f70c88f10dd4e9437236d211bd3713a33de7dd64bbc4f0ba9cee94bb675bcf": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "763bdab6b6e89b2a0fecace70537e67b169cb33280e10d510684cad9da70cdde": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "77b114f60f06c2d4681568cc427c76436b38637cacd438e5c89aea6a59deabab": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "78202dfeca72d719933acaeabe38373d819cfc732e37092a5c1bfaa4362f3038": {
+   "urteil": {
+    "wert": 0.4,
+    "vertrauen": 0.66,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.73,
+     "1": 0.18,
+     "2": 0.07,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1014,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "786e5ecbb32638ad0b83966397d1524594bdba793db73e550282e3c2bffac883": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "79820452eaf9ccd3fa8340a00f61e19d63f149066c96598f78a6484323a2c224": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "7aa991199f0fdcaec951e179e7affceebd6b8db23f8592a4742fcbfad218b082": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1765,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "7d7fc8a2a191a4c050867b46e6d4a41984a305b0beb170c52a6a788bd961ee44": {
+   "urteil": {
+    "wert": 1.36,
+    "vertrauen": 0.0,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.41000000000000003,
+     "1": 0.22,
+     "2": 0.1,
+     "3": 0.16,
+     "4": 0.11
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1054,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "7f254ba28708dbfec511bce55ba209370aaf4f1b6a3cccc4e3357dee88101bec": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "8074d0666bd43dec938dc39c928c9a6a84b8a88632c8675bec6c362f0098548c": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.93,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.94,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1037,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "808473e76e0bc82b0e570057ffffc596c7b88f06bbee86a9e9fae6c2e0058eee": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "80d45811ac62b172a51c7cf90b8f2eaef2e1cec00c3ad9ba41cdf53b3bc6e656": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "81af64c8ab6bd0813aa50ee176677275f2af2077520b01bf25bfcab366a2cd9c": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1786,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "82e3af753fcfe4a784d604b42e0a3293a509a6c4d961454987f99d8ed206b14b": {
+   "urteil": {
+    "wert": 0.15,
+    "vertrauen": 0.7,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.15,
+     "nein": 0.85
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "83188edf13a6534d90f4eb0a2bbdb06e7e754f6dccebc9ba31c88f4b87e0d2c2": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1755,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "83287cc596d29eb7b32797786ead7575814f252dc30f294595955070e486a1bd": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.97,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1022,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "8577aef508adba02a3cab72f78a60f9f06604aa07e0912470deab811be968452": {
+   "urteil": {
+    "wert": 0.1,
+    "vertrauen": 0.8,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.1,
+     "nein": 0.9
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "8617feb98c68dd9c4a4d4ffa3e5464758e06fde3b67920bd6f31841804e8de62": {
+   "urteil": {
+    "wert": 0.14,
+    "vertrauen": 0.72,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.14,
+     "nein": 0.86
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "862a8dea4ba7ee9aa289750195efc11a023d4019727971effd5791d9554b8844": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "87ff7d986e0830025e96835916b1546a9e7070e1f37645e141ff427b24153cec": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1786,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "880ecd28a5df917e943647983dc3a50407d688544a7d23288d0b0c3f187af4aa": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1786,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "885dd5821d4d3ad927caec7ca3b91564874c871aa4bd5fedcf836102d2aa4cc9": {
+   "urteil": {
+    "wert": 1.53,
+    "vertrauen": 0.53,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.61,
+     "2": 0.21,
+     "3": 0.15,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1047,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "89a2b83a812ed28633f86c049fafdca6172df5812805195b6eda3af093f423fc": {
+   "urteil": {
+    "wert": 0.19,
+    "vertrauen": 0.62,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.19,
+     "nein": 0.81
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "89b4f7c3b0c1cd655cdf30aec0552128fe965ca11b8775edf462f9c14eaeaa55": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "8a1380b0652947e1c0f9897d008a4539ae68b4fcea8f96a87c6e62cb66a8cb18": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "8a67046553da63a1465632be20ab18395985372e43fb55375dec7a141034868a": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1765,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "8a7ede95a8aa346a6c9c4767de35b7a6b7cb0a96ab33561454bba6f916b8ec06": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.97,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1030,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "8b1813b713042f247bf1808d227878c9779bc6af183a75d5933c1158effee23e": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "8b7347d35514795b50b79f5a75e31d042c70649a5790ec813134b0f5dfc73337": {
+   "urteil": {
+    "wert": 1.41,
+    "vertrauen": 0.65,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.71,
+     "2": 0.15,
+     "3": 0.12,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1021,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "8be4d5244e755bb97fdd6b1d61b3f4f5064d71baac6b4a885eb46c61decb4579": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "8c4a8fd807f87fb251acd08e05a86614a839229629ab9c53e9a4c7ca4021c091": {
+   "urteil": {
+    "wert": 3.33,
+    "vertrauen": 0.44,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.12,
+     "2": 0.03,
+     "3": 0.15,
+     "4": 0.67
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1023,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "8c7ac0014a8ca441010cc50aa5e597fae6935df698329398724c141aaa674512": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1784,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "8e1551f05751c203c751ed67428fcb22a8e2156653d505155349b0acc330d4ab": {
+   "urteil": {
+    "wert": 0.17,
+    "vertrauen": 0.6599999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.17,
+     "nein": 0.83
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1786,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "8f048887454df172d5616bad2711fa0945d72b2ac6b9113193cb9bfee4d961e7": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1774,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "9027db558a4137eac2af29ac6917d899b5204367568e4be168ed104f48547fc8": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1755,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "9074b92c559f4c630d6fc8ee1d630d6511fdf65a7daa61a0e01e4b3fd89dda6f": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "91ba3e343f8730dc8898ca7f3545623ba380de1f9a75f991c5e8b4c9591d04a2": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "91f82c4759914ef559947a382bd997946665b08842e1131eb81cabfc147fe7da": {
+   "urteil": {
+    "wert": 1.03,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.97,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1025,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "91f835bfa5ec2de8e75a25bed58d7348a099f04f0fda25581fa9a183cbade61b": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.97,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1049,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "9290c9ad3c559cc598cfd28abe3d9880fcbb7543ab6869507e17563021179304": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1774,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "9321094e9ecdd42f7d725ea64cae5f42283b836a7dc92b9ae7b215016dd49607": {
+   "urteil": {
+    "wert": 0.41,
+    "vertrauen": 0.66,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.61,
+     "1": 0.38,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1043,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "9424074c89a2d5971b9bbea91d72572b75768ed7bdea3867798b71becd493142": {
+   "urteil": {
+    "wert": 0.13,
+    "vertrauen": 0.74,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.13,
+     "nein": 0.87
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "943c2e9e5439c324460365b7d94e9fa8859b63f6c2059133241d90219a96fd12": {
+   "urteil": {
+    "wert": 0.95,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.09,
+     "1": 0.87,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1020,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "945365337501dbd2dc3f1d08a03f452dad7f8d279f09a2a42f5bbc379e48a0d5": {
+   "urteil": {
+    "wert": 0.99,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.96,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1008,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "96de99c8babda5b405bfe8eddb25df2d001863705e3a6bfb525dbd2b3717e3b8": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "97a6a240d6d4d198600e9c53f85d0a8733d16593d8b245236dc9c22665ac1645": {
+   "urteil": {
+    "wert": 1.54,
+    "vertrauen": 0.08,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.28,
+     "1": 0.3,
+     "2": 0.12,
+     "3": 0.19,
+     "4": 0.11
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1057,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "986907acafc23bfabc45aacb421be0bc95894e5c05a9fb64191d26524e8c350c": {
+   "urteil": {
+    "wert": 1.59,
+    "vertrauen": 0.34,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.1,
+     "1": 0.45,
+     "2": 0.23,
+     "3": 0.19,
+     "4": 0.03
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1028,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "98fbc3058ee50a3851f80451c039e25afe703bfc14d95f8236c3b5db6befc56f": {
+   "urteil": {
+    "wert": 0.45,
+    "vertrauen": 0.09999999999999998,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.45,
+     "nein": 0.55
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "9a1611de9bc7b24d0d379e4a1b84a43737061df9416b44dc1f8459918970d517": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "9bcaad2b5d03ee73479a42f522abcab61d89f641f0d9f27a10c84d24afc8fdd0": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1778,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "9dcaf662ff8423da5c97c36f18a941753ee11b9b08fd465e4076eebc23dc5ea1": {
+   "urteil": {
+    "wert": 3.35,
+    "vertrauen": 0.46,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.11,
+     "2": 0.03,
+     "3": 0.14,
+     "4": 0.69
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1026,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "9ef288d1184ae40a52af771738a9cacdc51f9cd7bec2b06e9e99e0309d028b17": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "9f8034bfead234b04d4876e833a631d76cdeb9cc37f52e835acad4fd77f39df0": {
+   "urteil": {
+    "wert": 1.55,
+    "vertrauen": 0.5,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.6,
+     "2": 0.2,
+     "3": 0.17,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1061,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "9f99fa88dc5a203f4a44a8e0b27352c1c3ee8355c21183cc69c56ecfc78af671": {
+   "urteil": {
+    "wert": 0.29,
+    "vertrauen": 0.42000000000000004,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.29,
+     "nein": 0.71
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "9fd816bbd380137876a4f662c8e19ab144a902a1d404ab519dd496f4de94e668": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "a0e71f22c97dd4dd7158203ff251330eab3b93fdfb705140f85a0ef98ba4af12": {
+   "urteil": {
+    "wert": 2.41,
+    "vertrauen": 0.28,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.21,
+     "2": 0.17,
+     "3": 0.45,
+     "4": 0.13
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 994,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a1106ffb29af979bb3e06971fb9cc45f60adf684af5f1ecc34953ee62e3f9498": {
+   "urteil": {
+    "wert": 1.11,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.91,
+     "2": 0.07,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1030,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a2c613799a3ddab66a644ef6fca0316447d7a5dc655282cd055d44c0e48db101": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "a2f36f87cc64f65ea305415c472cc36bd56865602218fe70d8370a94bc685271": {
+   "urteil": {
+    "wert": 1.03,
+    "vertrauen": 0.91,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.91,
+     "2": 0.04,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1045,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a34276e1b24817f35b88a80ac971a2ab00fd10a95e6a6eeb5ed999f72635e08b": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.96,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1012,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a3560f3ff07651c30f8f46b43482c3c804b1c085d49d475b860d0c92d4c21e87": {
+   "urteil": {
+    "wert": 1.66,
+    "vertrauen": 0.43,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.55,
+     "2": 0.21,
+     "3": 0.23,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1041,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a3746eebb643e6594fc229bfce75a366a98959c3b40481542fa32083abb0c962": {
+   "urteil": {
+    "wert": 0.34,
+    "vertrauen": 0.72,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.77,
+     "1": 0.16,
+     "2": 0.06,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1038,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a40086df6b7541d905e0295832d3610d5dc3ddadd4c37f3dcdbe1ba5f26517cb": {
+   "urteil": {
+    "wert": 0.92,
+    "vertrauen": 0.77,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.18,
+     "1": 0.75,
+     "2": 0.06,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1018,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a6a2d1780c1013aff379c6f0cbb805313ccec9ab18e4d2990e8885b3b12147ad": {
+   "urteil": {
+    "wert": 1.2,
+    "vertrauen": 0.0,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.38,
+     "1": 0.31,
+     "2": 0.12,
+     "3": 0.12,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1059,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a6c8e2d8ec3ab6e8a1fa391bf09a94b9d237208028d5734b6a84c929f2aa10ea": {
+   "urteil": {
+    "wert": 0.42,
+    "vertrauen": 0.65,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.67,
+     "1": 0.27,
+     "2": 0.04,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1030,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a7e13a59d66a5b8c80e0bd1b4f0ba699b746001eb682a6fe6e4707ad7eaef4fc": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "a8b4cd1c12dc0ffa6eaf1c00e8729e187a4a04923e97d35a2f7ef85fe0acf698": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.99,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.99,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1053,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "a974646276d72750781657d3644a4411abdcc03635fed157aa0e4435a19ed106": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.97,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.96,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1003,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "aaecd454584da66c85d2dffdca1645ff68a6723c02d62f2b39d1f403f813ea56": {
+   "urteil": {
+    "wert": 0.51,
+    "vertrauen": 0.58,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.65,
+     "1": 0.24,
+     "2": 0.07,
+     "3": 0.03,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1025,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "ab42fec3f94b639a9ca964291ae29461efc8b4d23bc4492758e382f52abb32f7": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.93,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.93,
+     "2": 0.03,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1044,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "ac33830740f3e042af240add9da1d1b325470b604300e228ae81b6dedb183a58": {
+   "urteil": {
+    "wert": 1.11,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.9,
+     "2": 0.04,
+     "3": 0.04,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1022,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "ac94ddc6389611538c95a0bf96e1ec5a79fb42378a48da436841fa90e6cc5005": {
+   "urteil": {
+    "wert": 0.14,
+    "vertrauen": 0.72,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.14,
+     "nein": 0.86
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1775,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "ac9775774b1aa2574ceccace4a2243a3884a02cdf86c07f0ed3b405ff9a28d57": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "acfadd38f596e4e925ca976261718edf726486104c532f84e85444c1744dcf88": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "acfc8b6ffb6de66feeae1b10013a7133b92fae1b804749ac25c28757db177bcb": {
+   "urteil": {
+    "wert": 0.6,
+    "vertrauen": 0.6,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.44,
+     "1": 0.53,
+     "2": 0.02,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1043,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "ad1af2be214e216a09c65c75e74fc1bd2d8cfc1a7b3cbee8ae3751d543095be3": {
+   "urteil": {
+    "wert": 1.25,
+    "vertrauen": 0.38,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.25,
+     "1": 0.5,
+     "2": 0.08,
+     "3": 0.1,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1032,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "ae77470d0792ab9cdeabf0944ab7df79e5de80b98c5ea9e152f1632376578bfb": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1778,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "ae8e5d3d98cbdecc31404ceb0a294b68e0192d87d288a7356b837c62b4dda5a4": {
+   "urteil": {
+    "wert": 1.07,
+    "vertrauen": 0.71,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.14,
+     "1": 0.7,
+     "2": 0.12,
+     "3": 0.03,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1038,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "aea39ea87a029368472ec25f0ed14ec5356cf73d308326c8e9a53f01c7cda611": {
+   "urteil": {
+    "wert": 1.28,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.81,
+     "2": 0.1,
+     "3": 0.09,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1024,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "aed0e1c2cebce79c0d07ce4b81493ab2216f070b00a9d888d192e9a0885c24ab": {
+   "urteil": {
+    "wert": 0.23,
+    "vertrauen": 0.81,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.79,
+     "1": 0.2,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1054,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "af6a337a2477ff124addfd1960372136a55822d612fa59f8860c8afe7219d9d7": {
+   "urteil": {
+    "wert": 1.72,
+    "vertrauen": 0.25,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.09,
+     "1": 0.45,
+     "2": 0.19,
+     "3": 0.19,
+     "4": 0.08
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1016,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "b31147a7dd646af9922e67fc1272cfecdc2d13ebef371c5601e7cb4ff63ca212": {
+   "urteil": {
+    "wert": 0.13,
+    "vertrauen": 0.74,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.13,
+     "nein": 0.87
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "b38f173f4b0394541fdd57a94fcde4b1492cae44387eef5429aac043cbeb2085": {
+   "urteil": {
+    "wert": 1.24,
+    "vertrauen": 0.63,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.1,
+     "1": 0.63,
+     "2": 0.19,
+     "3": 0.07,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1039,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "b3ae9df0800cd02b0d1e2212f0b15d27df21c2e13fa0879f2807f60fac9fc8f2": {
+   "urteil": {
+    "wert": 0.26,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.77,
+     "1": 0.22,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1026,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "b3c2d231d9561c660a5d9c35cd6c77e2f944f54b08858e0680ef9d1e03ec617b": {
+   "urteil": {
+    "wert": 0.6,
+    "vertrauen": 0.64,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.42,
+     "1": 0.57,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1018,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "b5911d387d06cce61a8112d10e452da5b4098aea13c03eeb914e7324820c222b": {
+   "urteil": {
+    "wert": 2.08,
+    "vertrauen": 0.36,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.28,
+     "2": 0.34,
+     "3": 0.28,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1041,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "b5a54498d439908b8bccaa1b80f824089363a46605a866ec543829f6f7cb25ef": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "b8b66dbbb6577d0ed95a3ab13eb9fbe4dd3dab28c26c2653307f1fe4592887e1": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "b92d32d07f00260d7a836af7101bd3cb67077149d810603e955b3b8e6066554b": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "b98553575abec1313c6eb25ecc4a9e52ebe7fea8a5e7af6c01caab4406cbcefc": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "b994e3244f4299e63ce94f70c256d065359a1eb63f8d17659aae2ee84706d123": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1760,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "b9da2fb350ffc899886d0eb51aceef2273443c0429c261cdbdcc293f8592eb04": {
+   "urteil": {
+    "wert": 0.14,
+    "vertrauen": 0.72,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.14,
+     "nein": 0.86
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "bb09d8da7a00b3121dc4592dfb8fb04dd96a9cc956afdedc87d4edfd84d4839e": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1013,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "be58a7807a8ea42f920ec41aa49e3d65b4a747435057c7cd390c2b9b6157bbcb": {
+   "urteil": {
+    "wert": 0.91,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.11,
+     "1": 0.87,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1033,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "bf29055f5eb44548186f7fee1cd48c2bbc81739a4a3b77d6771de5d3dc6091a0": {
+   "urteil": {
+    "wert": 2.08,
+    "vertrauen": 0.0,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.06,
+     "1": 0.34,
+     "2": 0.2,
+     "3": 0.26,
+     "4": 0.14
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1050,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "bfc7fa8377d8270a0ce0be3c334b44bcaf08b800b02ea2fbeba5931d34d4375b": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.96,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1046,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c04920dbfe027178455038279b38a631ad32189464c676ab3b44b562e627a7e7": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1026,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c2491baf67112ce9d25d35b628bb18edf6655f0aa512b3fc45e5d3a6afd4d837": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1049,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c404cede8e93a8cdf381bc481f244b9fce0a192ccb1a7993171edecbeca6dd3f": {
+   "urteil": {
+    "wert": 1.33,
+    "vertrauen": 0.63,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.06,
+     "1": 0.64,
+     "2": 0.22,
+     "3": 0.07,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1032,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c52b4d35834870dcc0bdee3102331d6f6c866bd9db761e2e75b04552199f10d0": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "c6275846d24df2b69b35524207b3d5e3ea84e8493ef501a4fdbf30344d25489c": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "c6b5280fee6e377e8d15dc420e70d4e099cea356f30e908df0b1ec5a2a0894dc": {
+   "urteil": {
+    "wert": 1.26,
+    "vertrauen": 0.59,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.12,
+     "1": 0.68,
+     "2": 0.07,
+     "3": 0.07,
+     "4": 0.05
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1028,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c742d7cc532d5af16d28ca3f3f65122888beb48404fb1dffbb7b07a83008e7ec": {
+   "urteil": {
+    "wert": 0.15,
+    "vertrauen": 0.7,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.15,
+     "nein": 0.85
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1746,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "c7e2d3007a9b14d7db21ad1c5d07718c70ccfee2b4bcb96e8b2f4f871c129b59": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.96,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1037,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c80f289258006a86476b4eb1d435518727af19348fad424045de1690a2e427d5": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.99,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1052,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c81529a87b7aea4c3b9e053c8f16ee746d1c342765945a1449b56d318a6289c1": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "c81cf23f9e1151eb1d0a894b5916a9483ddcce990623d57f1cbc527396286fc0": {
+   "urteil": {
+    "wert": 3.34,
+    "vertrauen": 0.45,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.09,
+     "2": 0.04,
+     "3": 0.17,
+     "4": 0.66
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1048,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c82e3647a50c075fc61465d90711a2df7dba345a3e5a4eaa3d91a3251d6bf33f": {
+   "urteil": {
+    "wert": 0.09,
+    "vertrauen": 0.8200000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.09,
+     "nein": 0.91
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "c8f8f683207faa0d2b994d38f58834b8a66119d11e220cb6bef41220a758256d": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.92,
+     "2": 0.04,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1049,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "c9e92edd3accef6b14e2b4cde53cf76d020e8f0348566c48591f5505e5f2454c": {
+   "urteil": {
+    "wert": 0.22,
+    "vertrauen": 0.56,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.22,
+     "nein": 0.78
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "cb5639a38f179a46a4339a31e6509e0147639adbe2fc8869e19a25cfdcce44e6": {
+   "urteil": {
+    "wert": 0.17,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.86,
+     "1": 0.13,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1030,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "cbfc3d4440f9d611c1ba0e0a7ca04294e84d53939d348b61ed55d873f5b0812f": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "ce80ae0ec6f3e2ec3ff0a7c38865f27aa694dfc67520d3db750f4c2d362960b1": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "ce81865ab07b10e60656e5cf9fdac2e9f65d889a4fa4b757ad62a96987186083": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.91,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.05,
+     "1": 0.9,
+     "2": 0.04,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1034,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "d18f96948b4645d7816815c7397cbe751e999ffd6771d50c6881611519eb9c26": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "d2103693d0c50a6eb4717aa41ab2bbb97ec766a9852b21c8d8343052a7fdab0f": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1755,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "d220a1189d072dfbce15c4bde1ef7928ebcbe87bace784c815dd8e78c653a5d3": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "d369e95d23acbd40f82b61464f4eb0fe70c0e50bafaeddd78cd906cfb52de371": {
+   "urteil": {
+    "wert": 0.98,
+    "vertrauen": 0.96,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.04,
+     "1": 0.95,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1018,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "d41a597293ff821efa5d53a7e059397a8882a352b0160befb4b8d6fdacd94d97": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4535,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "d4adfc59f2e745360a84f7420b216701b56aa11545fd0d70a747a3a49bea403e": {
+   "urteil": {
+    "wert": 1.36,
+    "vertrauen": 0.65,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.7,
+     "2": 0.15,
+     "3": 0.11,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1056,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "d5c5181809982502f8c37e657547bec3ba928e9eae71c072a764cd88f1cc9d95": {
+   "urteil": {
+    "wert": 0.19,
+    "vertrauen": 0.62,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.19,
+     "nein": 0.81
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1775,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "d6a2912f166f7e507ac103ec7edb6affe86b2f9540db315c522ae63f200f6eb1": {
+   "urteil": {
+    "wert": 0.1,
+    "vertrauen": 0.8,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.1,
+     "nein": 0.9
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "d6cb1986a9a5e69aac78acfb1367d2d1dcc02232a665bd13bb8b6d8bc965fb26": {
+   "urteil": {
+    "wert": 0.16,
+    "vertrauen": 0.6799999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.16,
+     "nein": 0.84
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "d6d9c521e58a149ef605521dc3fc7970659a7ffb7562d873ae82c996562707e8": {
+   "urteil": {
+    "wert": 0.16,
+    "vertrauen": 0.6799999999999999,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.16,
+     "nein": 0.84
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1775,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "d7d8fcb84e265b2cdd97ef8769cb4fa4ad2b6280f9cb425a8d23e5a984400777": {
+   "urteil": {
+    "wert": 1.36,
+    "vertrauen": 0.67,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.02,
+     "1": 0.72,
+     "2": 0.15,
+     "3": 0.1,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1061,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "d85f24b83c812182657d6f452ccb84a551f0a9872699784ea0459d04a58ff4a9": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "d9f0c64fb5b386aa874cc010ef1c8d3e098d9490a21e2a5606130f801ce3b724": {
+   "urteil": {
+    "wert": 0.12,
+    "vertrauen": 0.76,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.12,
+     "nein": 0.88
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "dab8ad8bb7a6abc16f699e8f79b14efd973c692a1e35840d1389bebce00b6248": {
+   "urteil": {
+    "wert": 0.03,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.03,
+     "nein": 0.97
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "dac05a921a719e5ba7b7125bf281d5e2ffca887bcea62d51eb64cdc87892baff": {
+   "urteil": {
+    "wert": 1.34,
+    "vertrauen": 0.38,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.2,
+     "1": 0.55,
+     "2": 0.05,
+     "3": 0.08,
+     "4": 0.11
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1042,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "db13ff3e5e2274808c4ca9ba33d46df05d12752cbf6dc7d50ea926ec8500816e": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1778,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "dbe916af91b33281a832bde5e2826f131e6c0c7b48a5a040ee791b3a201df3bf": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4530,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "dce2645a93acc1ac7ed0c97f74a21e2753ff03a7d00bcdb331c7c2040ccf74db": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "dda3dca485c0d980f3661e34284b0caa75d046a908117ba099b3bb63f0b2649d": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "ddf410cc4c8b468f898eaf93c808f1603fcf3aac1f7114d7db4cc5bac80b3528": {
+   "urteil": {
+    "wert": 1.16,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.89,
+     "2": 0.06,
+     "3": 0.05,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1036,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "deca6b11032c349b28cc8a16d4a98c5ae99a3f17a740d963048a3c25bfad3bb1": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.94,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1006,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "e0238b164c5fc3986a7ce135bb680ad270f1a6f172770e10a3143accfd754340": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4540,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "e1cfb116f7d4eaac01360ad67b536e55d2a7b87012f967ac1ab56ef3e522856e": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1775,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "e36f8b66d18f02d43e8cebdc73f9f316fcac79ce0710a16e2e5864059e6b8014": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4559,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "e3c672727e97acd36a802df4b7532e8eab17a0a5957a113e9c239ec2a2b3997f": {
+   "urteil": {
+    "wert": 1.22,
+    "vertrauen": 0.46,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.21,
+     "1": 0.56,
+     "2": 0.09,
+     "3": 0.08,
+     "4": 0.06
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1049,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "e3caf1f016857b3009d1d68768efda099d164f8b9d9732d62656e4b11ed5c240": {
+   "urteil": {
+    "wert": 1.12,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.9,
+     "2": 0.06,
+     "3": 0.03,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1056,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "e568eaa07507262af3aa33ce7a580585906b142dce61015f2ce58141a7d2be6e": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1746,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "e601c87ab3d97a41cd86c6d6bb5ef4698e99e65496322f1fb2ce0b51a1b6a9d5": {
+   "urteil": {
+    "wert": 0.05,
+    "vertrauen": 0.9,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.05,
+     "nein": 0.95
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "e62b15d07308bc88ec5b93e74b99b521fb9c8880623f544524a13ec83496e22c": {
+   "urteil": {
+    "wert": 1.04,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.95,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1011,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "e6c656abfeae8e35af7c1274c0520167c093a3399cca08685c15947daa54d977": {
+   "urteil": {
+    "wert": 0.86,
+    "vertrauen": 0.65,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.28,
+     "1": 0.61,
+     "2": 0.07,
+     "3": 0.03,
+     "4": 0.01
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1035,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "e70075ebae389740d116407aa30af1f5916a87a8675fdbe6bafb451f0dc6d626": {
+   "urteil": {
+    "wert": 0.14,
+    "vertrauen": 0.72,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.14,
+     "nein": 0.86
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "e7b9b40eb4f73a572bc589f8d6325f2852beb9d061bc1618be422d6897f79e4e": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "e8533a19d596d06c11845f1af69edcbb174bda625f11cdbe7ce9ae0dd3b9f165": {
+   "urteil": {
+    "wert": 0.99,
+    "vertrauen": 0.89,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.07,
+     "1": 0.89,
+     "2": 0.03,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1035,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "e88676107408b2d3c88555921a3b44f5f14f21299011d1e21e018678c5f1285c": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "ea743d454e934e5a9e65119538692b24b29c1d9af1c8052d56df95c6af634ed4": {
+   "urteil": {
+    "wert": 0.06,
+    "vertrauen": 0.88,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.06,
+     "nein": 0.94
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "eb8b4e4e7d4265a60b8f36eda805b998756e28913d6806a9533610de6fc8cef4": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "eb9b417aca97f0d0123dc1f9e9637a956bfe207d3c438003ef3d874e0edf0824": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4549,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "f0ecb9029c94aa4b02b96429221709b96cb3ffbdd75a30db4ddd379b40ae8d8a": {
+   "urteil": {
+    "wert": 1.0,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.08,
+     "1": 0.85,
+     "2": 0.06,
+     "3": 0.01,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1048,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f0f2deeace44ef0ece5de91fce33ca39e9f91fceed59d727f2d3c3c8bf150d6c": {
+   "urteil": {
+    "wert": 0.21,
+    "vertrauen": 0.5800000000000001,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.21,
+     "nein": 0.79
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1746,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "f26749ae4dd2c2023f146289534aa7521ac529d993d583012e1a05e81342cb16": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "f28afc9dd8d33b30d8e2f4657e38c052423436b5f1e996de506c6d8a86e0bec5": {
+   "urteil": {
+    "wert": 1.05,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.96,
+     "2": 0.02,
+     "3": 0.02,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1032,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f3c1e6663e3e156be398895724fdc8bfb6206a8c0c375b56fcfdf788807c71b7": {
+   "urteil": {
+    "wert": 0.37,
+    "vertrauen": 0.7,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.67,
+     "1": 0.31,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1013,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f442868732a4a61b356a2b513d713a5722bbf167b784b2679f98f032406f81c6": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1784,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "f46274d68927807f2e138386b6f0eeea092af838a9e450e45433d3d1dba0ffa9": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4553,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "f5add7f487e96b2655bb51befac53d00deca09b9e7ac7ac406ba718282027ab6": {
+   "urteil": {
+    "wert": 0.08,
+    "vertrauen": 0.84,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.08,
+     "nein": 0.92
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4521,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "f63df5c5573c1b80a35192570ec020c8e1431978ca5cc47dcedd685f0ab8d4eb": {
+   "urteil": {
+    "wert": 1.35,
+    "vertrauen": 0.27,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.26,
+     "1": 0.41000000000000003,
+     "2": 0.13,
+     "3": 0.13,
+     "4": 0.07
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1066,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f641e1e3d119688ea6cfd7df705131a4fed83f44dbb16060e6f9ab6883637bc6": {
+   "urteil": {
+    "wert": 0.07,
+    "vertrauen": 0.86,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.07,
+     "nein": 0.9299999999999999
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4550,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "f70cc0f5ecb6c615689a0e38902fec2cb988989a83f354d7895521a888c4d63d": {
+   "urteil": {
+    "wert": 1.26,
+    "vertrauen": 0.39,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.23,
+     "1": 0.49,
+     "2": 0.13,
+     "3": 0.09,
+     "4": 0.06
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1051,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f7dffc3bf73b3597174e96c2e81b120f63861f1a3f2dac7e7976ded8e47c9a3d": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1786,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "f8bc69b5e9f2f8b6824ca37ed0a59231983cf7d029c761349323fc271bfe0829": {
+   "urteil": {
+    "wert": 1.13,
+    "vertrauen": 0.45,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.26,
+     "1": 0.53,
+     "2": 0.09,
+     "3": 0.07,
+     "4": 0.05
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1047,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f8d7c21d0baef44421efe486cfaf0373a3646e683f6b4da4815f8dc4ad2d8eed": {
+   "urteil": {
+    "wert": 0.04,
+    "vertrauen": 0.92,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.04,
+     "nein": 0.96
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4554,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  },
+  "f8dfc3511aed06b8535748d94995987b5635a9398a443b9491e0058cef6ecdb4": {
+   "urteil": {
+    "wert": 2.52,
+    "vertrauen": 0.36,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.21,
+     "2": 0.13,
+     "3": 0.49,
+     "4": 0.14
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1049,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f9d972441c469c290f9466895c81522dae85379852a51b049d6dfc1f0f37ef68": {
+   "urteil": {
+    "wert": 1.02,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.0,
+     "1": 0.99,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1048,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "f9db0d74a98f74640716252806a4db3d35b3110c33092294e684b59048ff3e88": {
+   "urteil": {
+    "wert": 0.74,
+    "vertrauen": 0.38,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.49,
+     "1": 0.41,
+     "2": 0.02,
+     "3": 0.03,
+     "4": 0.05
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1034,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "fb70d5709ffd470740cfda7fced18bbed53bf1a11199e194d289d09b93d643bb": {
+   "urteil": {
+    "wert": 0.11,
+    "vertrauen": 0.78,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.11,
+     "nein": 0.89
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1765,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "fbe4ac5a9adc8d12a2edd80617e93c4512df6eadf39e51f4ad64ce0873888176": {
+   "urteil": {
+    "wert": 0.99,
+    "vertrauen": 0.95,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.03,
+     "1": 0.95,
+     "2": 0.02,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1047,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "fd0fc2bd6c730f7c6c47f38763f92ffe4852b4256e321405d6756a52479e35ac": {
+   "urteil": {
+    "wert": 1.01,
+    "vertrauen": 0.98,
+    "vertrauen_quelle": "anbieter",
+    "wahrscheinlichkeiten": {
+     "0": 0.01,
+     "1": 0.98,
+     "2": 0.01,
+     "3": 0.0,
+     "4": 0.0
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1014,
+    "tokens_aus": 22,
+    "form": "score"
+   }
+  },
+  "fe3ec225ddc38d808271561bd044954279556c5adb75a80345e29f24dfa06db5": {
+   "urteil": {
+    "wert": 0.13,
+    "vertrauen": 0.74,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.13,
+     "nein": 0.87
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 1778,
+    "tokens_aus": 143,
+    "form": "noul"
+   }
+  },
+  "ff79dbb0f2a7e83f57079f679e5fbfdfe5d7ba550b8c1e8b5d74b620810b6e7b": {
+   "urteil": {
+    "wert": 0.13,
+    "vertrauen": 0.74,
+    "vertrauen_quelle": "berechnet",
+    "wahrscheinlichkeiten": {
+     "ja": 0.13,
+     "nein": 0.87
+    },
+    "anbieter": "jev",
+    "modell": "jev-1.13.0",
+    "tokens_ein": 4561,
+    "tokens_aus": 444,
+    "form": "noul"
+   }
+  }
+ }
+}

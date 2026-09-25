@@ -398,9 +398,17 @@ PROFILE = {
         ''),
 }
 
-# Wer keine Einwilligung zur KI-Auswertung gibt: Robin. Fuer Schritt 9 - seine
-# Beitraege duerfen dann nicht ins Matching (Randfall zum Mitpruefen).
-OHNE_KI_EINWILLIGUNG = {'dummy-ohne-angabe-robin'}
+# Wer keine Einwilligung zur KI-Auswertung gibt: NIEMAND mehr.
+# Bis 24.09.2026 stand hier Robin (dummy-ohne-angabe-robin), als Randfall fuer
+# Schritt 9 ("seine Beitraege duerfen nicht ins Matching"). ENTSCHIEDEN (Fabian,
+# 24.09.2026, TASK-120.13): "Wer keine KI-Einwilligung gibt, darf sich spaeter
+# gar nicht anmelden; das System basiert auf der KI-Auswertung. Gib jetzt allen
+# Testdaten und meinem Account die Einwilligung zum Testen." Einen Nutzer ohne
+# Einwilligung gibt es damit im Betrieb nicht mehr, also auch keinen Dummy
+# dafuer. Die Menge bleibt als Stellschraube stehen; anlegen() zieht die
+# Einwilligung auf einem vorhandenen Bestand nach (_soll legt fehlende an).
+# Die Datensperre in kern/urteile/sperre.py prueft die Einwilligung weiter.
+OHNE_KI_EINWILLIGUNG = set()
 
 
 # ---------------------------------------------------------------------------
